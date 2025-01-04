@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Camydia Agency{% endblock %}</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/main.js?v=1.0" defer></script>
+</head>
+<body class="bg-white text-gray-900">
+  {% block header %}
+    {% include 'partials/header.twig' %}
+  {% endblock %}
+
+  <main>
+    <div class="test-animation w-20 h-20 bg-pink-500 flex items-center justify-center text-white font-bold animate-spin duration-2000 ease-in-out infinite z-50 fixed top-48 left-1/2 -translate-x-1/2">TEST</div>
+    {% block content %}{% endblock %}
+  </main>
+
+  {% block footer %}
+    {% include 'partials/footer.twig' %}
+  {% endblock %}
+</body>
+</html>

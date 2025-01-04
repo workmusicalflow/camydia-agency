@@ -1,0 +1,29 @@
+{
+  "name": "camydia-agency",
+  "version": "1.0.0",
+  "description": "## Description du projet Le site web de **Camydia Agency** a pour objectif de mettre en valeur l'expertise de l'agence dans la fourniture d'hôtesses professionnelles pour tout type d'événements. Il présentera l'histoire de l'agence, ses services, son équipe, et facilitera la prise de contact avec l'agence.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development tailwindcss -i ./src/assets/css/main.css -o ./public/css/main.css --watch",
+    "build": "NODE_ENV=production tailwindcss -i ./src/assets/css/main.css -o ./public/css/main.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "js-build": "cp src/assets/js/main.js public/js/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@alpinejs/intersect": "^3.14.8",
+    "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.15",
+    "alpinejs": "^3.14.8",
+    "autoprefixer": "^10.4.20",
+    "regenerator-runtime": "^0.14.1",
+    "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "@types/gsap": "^3.0.0",
+    "gsap": "^3.12.5",
+    "vite": "^6.0.7"
+  }
+}

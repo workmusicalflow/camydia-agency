@@ -1,0 +1,25 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-4">Notre Histoire</h1>
+    <div class="prose max-w-none">
+        <p>Camydia Agency a été fondée en 2010 avec une vision claire : fournir des services d'hôtesses professionnelles de qualité supérieure pour tous types d'événements.</p>
+        
+        <h2 class="text-2xl font-bold mt-8 mb-4">Notre Engagement</h2>
+        <ul class="list-disc pl-6">
+            <li>Excellence dans le service client</li>
+            <li>Professionnalisme à chaque étape</li>
+            <li>Approche personnalisée</li>
+        </ul>
+        
+        <h2 class="text-2xl font-bold mt-8 mb-4">Nos Partenaires</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-gray-100 p-4 rounded-lg">Logo Partenaire 1</div>
+            <div class="bg-gray-100 p-4 rounded-lg">Logo Partenaire 2</div>
+            <div class="bg-gray-100 p-4 rounded-lg">Logo Partenaire 3</div>
+            <div class="bg-gray-100 p-4 rounded-lg">Logo Partenaire 4</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

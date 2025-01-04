@@ -1,0 +1,39 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">Nos Services</h1>
+    
+    <div class="grid md:grid-cols-2 gap-8">
+        <div class="prose">
+            <h2 class="text-2xl font-bold mb-4">Services Professionnels</h2>
+            <ul class="list-disc pl-6">
+                <li>Accueil et orientation des invités</li>
+                <li>Gestion des inscriptions</li>
+                <li>Animation de stands</li>
+                <li>Support logistique</li>
+            </ul>
+        </div>
+        
+        <div>
+            <h2 class="text-2xl font-bold mb-4">Galerie Photos</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-gray-100 aspect-square rounded-lg"></div>
+                <div class="bg-gray-100 aspect-square rounded-lg"></div>
+                <div class="bg-gray-100 aspect-square rounded-lg"></div>
+                <div class="bg-gray-100 aspect-square rounded-lg"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-12">
+        <h2 class="text-2xl font-bold mb-4">Types d'Événements</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-gray-100 p-4 rounded-lg">Salons professionnels</div>
+            <div class="bg-gray-100 p-4 rounded-lg">Lancements produits</div>
+            <div class="bg-gray-100 p-4 rounded-lg">Conférences</div>
+            <div class="bg-gray-100 p-4 rounded-lg">Événements privés</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

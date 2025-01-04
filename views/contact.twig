@@ -1,0 +1,88 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">Contactez-nous</h1>
+    
+    <div class="grid md:grid-cols-2 gap-8">
+        <!-- Formulaire de contact -->
+        <div>
+            <form class="space-y-4" x-data="contactForm()">
+                <div>
+                    <label for="name" class="block mb-1">Nom complet</label>
+                    <input type="text" id="name" name="name" required
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                </div>
+                
+                <div>
+                    <label for="email" class="block mb-1">Adresse email</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500">
+                </div>
+                
+                <div>
+                    <label for="message" class="block mb-1">Message</label>
+                    <textarea id="message" name="message" rows="5" required
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"></textarea>
+                </div>
+                
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    Envoyer le message
+                </button>
+            </form>
+        </div>
+        
+        <!-- Coordonnées et FAQ -->
+        <div class="space-y-8">
+            <div>
+                <h2 class="text-2xl font-bold mb-4">Coordonnées</h2>
+                <div class="space-y-2">
+                    <p><strong>Adresse :</strong> Cocody, Abidjan</p>
+                    <p><strong>Téléphone :</strong> +225 07 58 23 27 92</p>
+                    <p><strong>Email :</strong> camydia94@gmail.com</p>
+                </div>
+            </div>
+            
+            <div>
+                <h2 class="text-2xl font-bold mb-4">FAQ</h2>
+                <div class="space-y-4">
+                    <div x-data="{ open: false }" class="border-b pb-4">
+                        <button @click="open = !open" class="w-full text-left flex justify-between items-center">
+                            <span>Comment puis-je réserver des hôtesses ?</span>
+                            <svg :class="{'rotate-180': open}" class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-collapse class="mt-2 text-gray-600">
+                            Vous pouvez nous contacter via ce formulaire ou directement par téléphone.
+                        </div>
+                    </div>
+                    
+                    <div x-data="{ open: false }" class="border-b pb-4">
+                        <button @click="open = !open" class="w-full text-left flex justify-between items-center">
+                            <span>Quels sont vos tarifs ?</span>
+                            <svg :class="{'rotate-180': open}" class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-collapse class="mt-2 text-gray-600">
+                            Nos tarifs varient selon le type d'événement et la durée. Contactez-nous pour un devis personnalisé.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function contactForm() {
+    return {
+        submitForm() {
+            // Validation et envoi du formulaire
+        }
+    }
+}
+</script>
+{% endblock %}

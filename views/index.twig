@@ -1,0 +1,122 @@
+{% extends 'layout.twig' %}
+
+{% block title %}Accueil - Camydia Agency{% endblock %}
+
+{% block content %}
+  <!-- Test Animation -->
+  <div class="test-animation w-20 h-20 bg-pink-500 flex items-center justify-center text-white font-bold animate-spin duration-2000 ease-in-out infinite z-50 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 mt-16">TEST</div>
+
+  <!-- GSAP Test Element -->
+  <div class="test-gsap w-20 h-20 bg-primary rounded-lg flex items-center justify-center text-white font-bold mx-auto mb-8">
+    TEST
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-content pt-32 pb-20 bg-gradient-to-br from-primary/10 to-accent/10">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+          Votre partenaire d'hôtesses professionnelles
+        </h1>
+        <p class="text-xl text-secondary mb-8">
+          Découvrez notre expertise et notre engagement envers l'excellence pour tous vos événements
+        </p>
+        <a href="/contact" class="inline-block bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-300">
+          Contactez-nous
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-primary mb-12">Nos Services Phares</h2>
+      <div class="grid md:grid-cols-3 gap-8 service-card-container">
+        <div class="bg-white p-6 rounded-lg shadow-lg service-card">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-primary text-center mb-4">Événements Corporate</h3>
+          <p class="text-secondary text-center">Professionnalisme et élégance pour vos événements d'entreprise</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-primary text-center mb-4">Salons & Expositions</h3>
+          <p class="text-secondary text-center">Une présence remarquable pour vos stands et accueils</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-primary text-center mb-4">Événements VIP</h3>
+          <p class="text-secondary text-center">Excellence et distinction pour vos réceptions prestigieuses</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-secondary/5">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-primary mb-12">Ce que nos clients disent</h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto testimonials">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <div class="flex items-center mb-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                <span class="text-accent font-semibold">MB</span>
+              </div>
+            </div>
+            <div class="ml-4">
+              <h4 class="text-lg font-semibold text-primary">Marie Bertrand</h4>
+              <p class="text-secondary text-sm">Directrice Marketing</p>
+            </div>
+          </div>
+          <p class="text-secondary italic">"Un service exceptionnel ! Les hôtesses étaient parfaitement formées et ont contribué au succès de notre événement."</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <div class="flex items-center mb-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                <span class="text-accent font-semibold">DS</span>
+              </div>
+            </div>
+            <div class="ml-4">
+              <h4 class="text-lg font-semibold text-primary">Djibril Secong</h4>
+              <p class="text-secondary text-sm">Organisateur d'événements</p>
+            </div>
+          </div>
+          <p class="text-secondary italic">"Professionnalisme, élégance et efficacité. Camydia Agency est devenu notre partenaire de confiance pour tous nos événements."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section py-20 bg-gradient-to-r from-primary to-accent text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Prêt à sublimer votre événement ?</h2>
+      <p class="text-xl mb-8 opacity-90">Contactez-nous dès maintenant pour discuter de vos besoins</p>
+      <div class="flex justify-center space-x-4">
+        <a href="/contact" class="bg-white text-primary hover:bg-white/90 font-semibold px-8 py-4 rounded-lg transition-colors duration-300">
+          Demander un devis
+        </a>
+        <a href="/services" class="border-2 border-white hover:bg-white/10 font-semibold px-8 py-4 rounded-lg transition-colors duration-300">
+          Nos services
+        </a>
+      </div>
+    </div>
+  </section>
+{% endblock %}
