@@ -4,8 +4,11 @@
 
 {% block content %}
   <!-- Hero Section -->
-  <section class="hero-content pt-32 pb-20 bg-gradient-to-br from-primary/10 to-accent/10">
-    <div class="container mx-auto px-4">
+  <section class="hero-content pt-32 pb-20 bg-gradient-to-br from-primary/10 to-accent/10 relative overflow-hidden">
+    <div class="absolute inset-0 z-10">
+      <img src="/images/content/home/hero-min.png" alt="" class="w-full h-full object-cover object-right">
+    </div>
+    <div class="container mx-auto px-4 relative z-20">
       <div class="max-w-3xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
           Votre partenaire d'hôtesses professionnelles
