@@ -62,10 +62,13 @@
   </section>
 
   <!-- Testimonials Section -->
-  <section class="py-20 bg-secondary/5">
+  <section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 z-10">
+      <img src="/images/content/home/testimonials-bkg.jpg" alt="" class="w-full h-full object-cover">
+    </div>
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center text-primary mb-12">Ce que nos clients disent</h2>
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto testimonials">
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto testimonials relative z-20">
         <div class="bg-white p-6 rounded-lg shadow-lg">
           <div class="flex items-center mb-4">
             <div class="flex-shrink-0">
