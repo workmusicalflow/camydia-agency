@@ -81,15 +81,15 @@ Construire le site web de **Camydia Agency** en suivant ce plan de développemen
 ### **Phase 5 : Design, Animations et Responsive**
 
 - [x] Appliquer la charte graphique (couleurs : #ed1e79; #808080; #ff9b2e)
-- [ ] Installer et configurer GSAP
-- [ ] Implémenter les animations :
-  - Transitions de page fluides
-  - Apparition progressive des sections au scroll
-  - Animations des images et textes
-  - Effets de parallaxe subtils
-  - Transitions du menu mobile
-- [ ] Optimiser le responsive design
-- [ ] Optimiser les images et performances
+- [x] Installer et configurer GSAP
+- [~] Implémenter les animations :
+  - [x] Transitions de page fluides
+  - [x] Apparition progressive des sections au scroll
+  - [x] Animations des images et textes
+  - [ ] Effets de parallaxe subtils
+  - [x] Transitions du menu mobile
+- [x] Optimiser le responsive design
+- [x] Optimiser les images et performances
 - [ ] Ajouter le bouton retour en haut de page animé
 - [ ] Finaliser la navigation mobile avec animations
 
