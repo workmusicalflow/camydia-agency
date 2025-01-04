@@ -1,4 +1,4 @@
-<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50" x-data="{ isOpen: false }">
+<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50" x-data="mobileMenu()">
   <nav class="container mx-auto px-4 py-6 flex justify-between items-center">
     <a href="/" class="text-2xl font-bold text-primary">
       Camydia Agency
@@ -13,14 +13,14 @@
     </div>
 
     <button 
-      @click="isOpen = !isOpen" 
+      @click="toggle()"
       class="md:hidden text-secondary hover:text-primary transition-colors duration-300"
       aria-label="Menu"
     >
-      <svg x-show="!isOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
-      <svg x-show="isOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
       </svg>
     </button>
@@ -28,7 +28,7 @@
 
   <!-- Menu mobile -->
   <div 
-    x-show="isOpen" 
+    x-show="open"
     x-transition:enter="transition ease-out duration-300"
     x-transition:enter-start="opacity-0 transform -translate-y-2"
     x-transition:enter-end="opacity-100 transform translate-y-0"

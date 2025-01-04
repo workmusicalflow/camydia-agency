@@ -1,11 +1,16 @@
-// Import des modules
-import { initAnimations } from "./animations";
+document.addEventListener("alpine:init", () => {
+  Alpine.data("mobileMenu", () => ({
+    open: false,
+    isOpen: false,
 
-// Initialisation des fonctionnalités
-document.addEventListener("DOMContentLoaded", () => {
-  // Initialisation des animations
-  initAnimations();
+    toggle() {
+      this.open = !this.open;
+      this.isOpen = !this.isOpen;
+    },
 
-  // Autres initialisations
-  // ...
+    close() {
+      this.open = false;
+      this.isOpen = false;
+    },
+  }));
 });
