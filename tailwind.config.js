@@ -9,8 +9,11 @@ module.exports = {
         accent: "#ff9b2e",
       },
       fontFamily: {
-        sans: ["Arial", "sans-serif"],
-        serif: ["Georgia", "serif"],
+        sans: ["Inter", "sans-serif"],
+        serif: ["Bodoni Moda", "serif"],
+      },
+      opacity: {
+        75: "0.75",
       },
     },
   },
