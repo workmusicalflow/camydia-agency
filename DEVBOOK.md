@@ -87,11 +87,11 @@ Construire le site web de **Camydia Agency** en suivant ce plan de développemen
   - [x] Apparition progressive des sections au scroll
   - [x] Animations des images et textes
   - [ ] Effets de parallaxe subtils
-  - [x] Transitions du menu mobile
+  - [x] Transitions du menu mobile (correction de la synchronisation des états open/isOpen)
 - [x] Optimiser le responsive design
 - [x] Optimiser les images et performances
 - [ ] Ajouter le bouton retour en haut de page animé
-- [ ] Finaliser la navigation mobile avec animations
+- [x] Finaliser la navigation mobile avec animations
 
 ---
 
