@@ -3,13 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Camydia Agency - Votre partenaire d'hôtesses professionnelles pour tous vos événements en Côte d'Ivoire">
+  <meta name="theme-color" content="#ed1e79">
   <title>{% block title %}Camydia Agency{% endblock %}</title>
-    <link rel="stylesheet" href="/css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Preloading critical assets -->
+  <link rel="preload" href="{{ asset('css') }}" as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" as="script">
+  <link rel="preload" href="{{ asset('js') }}?v=1.1" as="script">
+  
+  <!-- Preload logo for faster paint -->
+  <link rel="preload" href="{{ asset('logo') }}" as="image">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ asset('css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-  <script src="/js/main.js?v=1.0"></script>
+  <script src="{{ asset('js') }}?v=1.1"></script>
+  
+  <!-- Page-specific scripts -->
+  {% block scripts %}{% endblock %}
+  
+  <!-- Mobile-specific meta tags -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-white text-gray-900 antialiased">
   {% block header %}
     <div x-data="mobileMenu()">
       {% include 'partials/header.twig' %}
@@ -23,5 +45,10 @@
   {% block footer %}
     {% include 'partials/footer.twig' %}
   {% endblock %}
+  
+  <!-- Alpine.js cloak style to prevent flicker on load -->
+  <style>
+    [x-cloak] { display: none !important; }
+  </style>
 </body>
 </html>

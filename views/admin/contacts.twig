@@ -1,0 +1,71 @@
+{% extends 'layout.twig' %}
+
+{% block title %}Administration - Liste des contacts{% endblock %}
+
+{% block content %}
+<div class="bg-white dark:bg-gray-900 min-h-screen">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-primary dark:text-primary-400">Administration - Liste des contacts</h1>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Gérez les messages reçus via le formulaire de contact</p>
+        </header>
+
+        {% if contacts|length > 0 %}
+            <div class="overflow-x-auto bg-white dark:bg-gray-800 shadow-md rounded-lg">
+                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                    <thead class="bg-gray-50 dark:bg-gray-700">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">ID</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Nom</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Email</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Téléphone</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Sujet</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Date</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Statut</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                        {% for contact in contacts %}
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">{{ contact.id }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-200">{{ contact.name }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">{{ contact.email }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">{{ contact.phone ?: '-' }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">{{ contact.subject }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">{{ contact.created_at|date("d/m/Y H:i") }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full
+                                    {% if contact.status == 'new' %}
+                                        bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200
+                                    {% elseif contact.status == 'notified' %}
+                                        bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200
+                                    {% elseif contact.status == 'processing' %}
+                                        bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200
+                                    {% elseif contact.status == 'completed' %}
+                                        bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200
+                                    {% else %}
+                                        bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200
+                                    {% endif %}
+                                    ">
+                                        {{ contact.status }}
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a href="/admin/contacts/{{ contact.id }}" class="text-primary hover:text-primary-dark dark:text-primary-400 dark:hover:text-primary-500">
+                                        Voir
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-6 text-center">
+                <p class="text-gray-500 dark:text-gray-400">Aucun contact trouvé.</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

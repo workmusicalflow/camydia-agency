@@ -17,8 +17,34 @@ class HomeController
 
     public function index(Request $request, Response $response): Response
     {
+        // Récupérer la liste des logos des partenaires
+        $partenairesDir = __DIR__ . '/../../../public/images/content/partenaires';
+        $partenaires = [];
+        
+        if (is_dir($partenairesDir)) {
+            $files = scandir($partenairesDir);
+            
+            foreach ($files as $file) {
+                // Ignorer les dossiers . et .. et s'assurer que c'est une image
+                if ($file !== '.' && $file !== '..' && !is_dir($partenairesDir . '/' . $file)) {
+                    // Vérifier l'extension du fichier pour s'assurer que c'est une image
+                    $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+                    if (in_array($extension, ['jpg', 'jpeg', 'png', 'gif', 'webp'])) {
+                        // Extraire le nom sans extension pour l'utiliser comme alt text
+                        $name = pathinfo($file, PATHINFO_FILENAME);
+                        $partenaires[] = [
+                            'file' => $file,
+                            'path' => '/images/content/partenaires/' . $file,
+                            'name' => $name
+                        ];
+                    }
+                }
+            }
+        }
+        
         return $this->view->render($response, 'index.twig', [
-            'title' => 'Camydia Agency - Accueil'
+            'title' => 'Camydia Agency - Accueil',
+            'partenaires' => $partenaires
         ]);
     }
 
@@ -33,13 +59,6 @@ class HomeController
     {
         return $this->view->render($response, 'services.twig', [
             'title' => 'Camydia Agency - Services'
-        ]);
-    }
-
-    public function team(Request $request, Response $response): Response
-    {
-        return $this->view->render($response, 'team.twig', [
-            'title' => 'Camydia Agency - Notre Équipe'
         ]);
     }
 

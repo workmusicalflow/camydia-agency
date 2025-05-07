@@ -1,0 +1,218 @@
+[2025-05-07 07:37:41] Chargement de la configuration depuis: /Users/ns2poportable/Documents/camydia-agency/src/App/Config/app.php
+[2025-05-07 07:37:41] Configuration chargée avec succès
+[2025-05-07 07:37:41] Client ID: DGxb...u03a
+[2025-05-07 07:37:41] Client Secret: S4yw...hBXs
+[2025-05-07 07:37:41] === DÉBUT DU TEST DE L'API ORANGE SMS ===
+[2025-05-07 07:37:41] Demande d'un jeton d'accès...
+[2025-05-07 07:37:42] Réponse HTTP: 200
+[2025-05-07 07:37:42] Réponse brute: 
+{
+  "token_type": "Bearer",
+  "access_token": "eyJ0eXAiOiJKV1QiLCJ2ZXIiOiIxLjAiLCJhbGciOiJFUzM4NCIsImtpZCI6Ikg1RkdUNXhDUlJWU0NseG5vTXZCWEtUM1AyckhTRVZUNV9VdE16UFdCYTQifQ.eyJpc3MiOiJodHRwczovL2FwaS5vcmFuZ2UuY29tL29hdXRoL3YzIiwiYXVkIjpbIm9wZSJdLCJleHAiOjE3NDY2MDcwNjMsImlhdCI6MTc0NjYwMzQ2MywianRpIjoiNkd5R3FES0JHQ25abHRYOXB5VjROZzV4WXhxVUtwZDVHZFd5b2JINm12NW5xRzAwc0hpaHpNWHh3UXdQTHo0QXo5c0pIN3l1RUJXQ1FvdjNSUVhmWlhuQkx2a09LQW5KMTJuUyIsImNsaWVudF9pZCI6IkRHeGJRS2Q5SkhYTGRGYVdHdHYwRmZxRkZJN0d1MDNhIiwic3ViIjoiREd4YlFLZDlKSFhMZEZhV0d0djBGZnFGRkk3R3UwM2EiLCJjbGllbnRfbmFtZSI6eyJkZWZhdWx0IjoiUXVhbGlhdGFzX3NlbmRlciJ9LCJjbGllbnRfdGFnIjoiWVd4dTZPNEY5Z1VMMEdTRSIsInNjb3BlIjpbIm9wZTpzbXNfYWRtaW46djE6YWNjZXNzIiwib3BlOnNtc21lc3NhZ2luZzp2MTphY2Nlc3MiXSwibWNvIjoiU0VLQVBJIn0.NbVa5XCCvUERBS7zNdxTQDFcNzqkdORp-MuGUFWpl2wehXM-qplUETXE7wLCjY43ouTMwdbf2y8YveTeKtTJNbxGIsbl6bslYwlvHea3Qf6Jj11P1tz1_dE6LR2B7HYG",
+  "expires_in": 3600
+}
+        
+[2025-05-07 07:37:42] Jeton d'accès obtenu avec succès: eyJ0eXAiOi...
+[2025-05-07 07:37:42] === TEST POUR LE NUMÉRO: +2250141399354 ===
+[2025-05-07 07:37:42] Envoi de SMS à tel:+2250141399354...
+[2025-05-07 07:37:42] Message: "Ceci est un test de l'API Orange SMS depuis Camydia Agency."
+[2025-05-07 07:37:42] URL de l'API: https://api.orange.com/smsmessaging/v1/outbound/tel%3A%2B2250595016840/requests
+[2025-05-07 07:37:42] Données JSON: {
+    "outboundSMSMessageRequest": {
+        "address": "tel:+2250141399354",
+        "outboundSMSTextMessage": {
+            "message": "Ceci est un test de l'API Orange SMS depuis Camydia Agency."
+        },
+        "senderAddress": "tel:+2250595016840",
+        "senderName": "Camydia"
+    }
+}
+[2025-05-07 07:37:42] Réponse HTTP: 400
+[2025-05-07 07:37:42] Réponse brute: {"requestError":{"serviceException":{"messageId":"SVC0002","text":"Invalid input value for message part %1","variables":["Forbidden senderName Camydia : not whitelisted or forbidden international sender name (on behalf of multinational company)"]}}}
+[2025-05-07 07:37:42] ERREUR: Échec de l'envoi du SMS à +2250141399354. Code HTTP: 400
+[2025-05-07 07:37:44] === TEST POUR LE NUMÉRO: +2250768174439 ===
+[2025-05-07 07:37:44] Envoi de SMS à tel:+2250768174439...
+[2025-05-07 07:37:44] Message: "Ceci est un test de l'API Orange SMS depuis Camydia Agency."
+[2025-05-07 07:37:44] URL de l'API: https://api.orange.com/smsmessaging/v1/outbound/tel%3A%2B2250595016840/requests
+[2025-05-07 07:37:44] Données JSON: {
+    "outboundSMSMessageRequest": {
+        "address": "tel:+2250768174439",
+        "outboundSMSTextMessage": {
+            "message": "Ceci est un test de l'API Orange SMS depuis Camydia Agency."
+        },
+        "senderAddress": "tel:+2250595016840",
+        "senderName": "Camydia"
+    }
+}
+[2025-05-07 07:37:45] Réponse HTTP: 400
+[2025-05-07 07:37:45] Réponse brute: {"requestError":{"serviceException":{"messageId":"SVC0002","text":"Invalid input value for message part %1","variables":["Forbidden senderName Camydia : not whitelisted or forbidden international sender name (on behalf of multinational company)"]}}}
+[2025-05-07 07:37:45] ERREUR: Échec de l'envoi du SMS à +2250768174439. Code HTTP: 400
+[2025-05-07 07:37:47] === RÉSUMÉ DES TESTS ===
+[2025-05-07 07:37:47] +2250141399354: ÉCHEC
+[2025-05-07 07:37:47] +2250768174439: ÉCHEC
+[2025-05-07 07:37:47] === FIN DU TEST DE L'API ORANGE SMS ===
+[2025-05-07 07:37:47] Le fichier de log complet est disponible à: /Users/ns2poportable/Documents/camydia-agency/tests/sms-api-test-results.log
+[2025-05-07 07:38:09] Chargement de la configuration depuis: /Users/ns2poportable/Documents/camydia-agency/src/App/Config/app.php
+[2025-05-07 07:38:09] Configuration chargée avec succès
+[2025-05-07 07:38:09] Client ID: DGxb...u03a
+[2025-05-07 07:38:09] Client Secret: S4yw...hBXs
+[2025-05-07 07:38:09] === DÉBUT DU TEST DE L'API ORANGE SMS ===
+[2025-05-07 07:38:09] Demande d'un jeton d'accès...
+[2025-05-07 07:38:10] Réponse HTTP: 200
+[2025-05-07 07:38:10] Réponse brute: 
+{
+  "token_type": "Bearer",
+  "access_token": "eyJ0eXAiOiJKV1QiLCJ2ZXIiOiIxLjAiLCJhbGciOiJFUzM4NCIsImtpZCI6Ikg1RkdUNXhDUlJWU0NseG5vTXZCWEtUM1AyckhTRVZUNV9VdE16UFdCYTQifQ.eyJpc3MiOiJodHRwczovL2FwaS5vcmFuZ2UuY29tL29hdXRoL3YzIiwiYXVkIjpbIm9wZSJdLCJleHAiOjE3NDY2MDcwOTEsImlhdCI6MTc0NjYwMzQ5MSwianRpIjoia2tSV2xUdU9xNTk1cWQwc1FwdHBQaU5oajJ4SDJkS2hZamtaOHVISjJlTzYxT1Z0eVk3dUxFVHI0cDBCYUxxTzdJRUhCeFpCdDZvdkMzMUluS0JIOWhtRzEzZjVZTFFiOUl6dSIsImNsaWVudF9pZCI6IkRHeGJRS2Q5SkhYTGRGYVdHdHYwRmZxRkZJN0d1MDNhIiwic3ViIjoiREd4YlFLZDlKSFhMZEZhV0d0djBGZnFGRkk3R3UwM2EiLCJjbGllbnRfbmFtZSI6eyJkZWZhdWx0IjoiUXVhbGlhdGFzX3NlbmRlciJ9LCJjbGllbnRfdGFnIjoiWVd4dTZPNEY5Z1VMMEdTRSIsInNjb3BlIjpbIm9wZTpzbXNfYWRtaW46djE6YWNjZXNzIiwib3BlOnNtc21lc3NhZ2luZzp2MTphY2Nlc3MiXSwibWNvIjoiU0VLQVBJIn0.pnKateHgWJI5IQ5F0tWl2Do3cUBiIvL4uZAd9EnjcX7fzCAl6k59rFiAF0O9WoE_X5U6IvH_Beqw6QOkFV0CRDLa2yuNbnLcn8fl8BAehrCy7vfjpzeGJH02LTb7fxmN",
+  "expires_in": 3600
+}
+        
+[2025-05-07 07:38:10] Jeton d'accès obtenu avec succès: eyJ0eXAiOi...
+[2025-05-07 07:38:10] === TEST POUR LE NUMÉRO: +2250141399354 ===
+[2025-05-07 07:38:10] Envoi de SMS à tel:+2250141399354...
+[2025-05-07 07:38:10] Message: "Ceci est un test de l'API Orange SMS depuis Camydia Agency."
+[2025-05-07 07:38:10] URL de l'API: https://api.orange.com/smsmessaging/v1/outbound/tel%3A%2B2250595016840/requests
+[2025-05-07 07:38:10] Données JSON: {
+    "outboundSMSMessageRequest": {
+        "address": "tel:+2250141399354",
+        "outboundSMSTextMessage": {
+            "message": "Ceci est un test de l'API Orange SMS depuis Camydia Agency."
+        },
+        "senderAddress": "tel:+2250595016840",
+        "senderName": "Todigital"
+    }
+}
+[2025-05-07 07:38:10] Réponse HTTP: 400
+[2025-05-07 07:38:10] Réponse brute: {"requestError":{"serviceException":{"messageId":"SVC0002","text":"Invalid input value for message part %1","variables":["Forbidden senderName Todigital : not whitelisted or forbidden international sender name (on behalf of multinational company)"]}}}
+[2025-05-07 07:38:10] ERREUR: Échec de l'envoi du SMS à +2250141399354. Code HTTP: 400
+[2025-05-07 07:38:12] === TEST POUR LE NUMÉRO: +2250768174439 ===
+[2025-05-07 07:38:12] Envoi de SMS à tel:+2250768174439...
+[2025-05-07 07:38:12] Message: "Ceci est un test de l'API Orange SMS depuis Camydia Agency."
+[2025-05-07 07:38:12] URL de l'API: https://api.orange.com/smsmessaging/v1/outbound/tel%3A%2B2250595016840/requests
+[2025-05-07 07:38:12] Données JSON: {
+    "outboundSMSMessageRequest": {
+        "address": "tel:+2250768174439",
+        "outboundSMSTextMessage": {
+            "message": "Ceci est un test de l'API Orange SMS depuis Camydia Agency."
+        },
+        "senderAddress": "tel:+2250595016840",
+        "senderName": "Todigital"
+    }
+}
+[2025-05-07 07:38:13] Réponse HTTP: 400
+[2025-05-07 07:38:13] Réponse brute: {"requestError":{"serviceException":{"messageId":"SVC0002","text":"Invalid input value for message part %1","variables":["Forbidden senderName Todigital : not whitelisted or forbidden international sender name (on behalf of multinational company)"]}}}
+[2025-05-07 07:38:13] ERREUR: Échec de l'envoi du SMS à +2250768174439. Code HTTP: 400
+[2025-05-07 07:38:15] === RÉSUMÉ DES TESTS ===
+[2025-05-07 07:38:15] +2250141399354: ÉCHEC
+[2025-05-07 07:38:15] +2250768174439: ÉCHEC
+[2025-05-07 07:38:15] === FIN DU TEST DE L'API ORANGE SMS ===
+[2025-05-07 07:38:15] Le fichier de log complet est disponible à: /Users/ns2poportable/Documents/camydia-agency/tests/sms-api-test-results.log
+[2025-05-07 07:38:43] Chargement de la configuration depuis: /Users/ns2poportable/Documents/camydia-agency/src/App/Config/app.php
+[2025-05-07 07:38:43] Configuration chargée avec succès
+[2025-05-07 07:38:43] Client ID: DGxb...u03a
+[2025-05-07 07:38:43] Client Secret: S4yw...hBXs
+[2025-05-07 07:38:43] === DÉBUT DU TEST DE L'API ORANGE SMS ===
+[2025-05-07 07:38:43] Demande d'un jeton d'accès...
+[2025-05-07 07:38:44] Réponse HTTP: 200
+[2025-05-07 07:38:44] Réponse brute: 
+{
+  "token_type": "Bearer",
+  "access_token": "eyJ0eXAiOiJKV1QiLCJ2ZXIiOiIxLjAiLCJhbGciOiJFUzM4NCIsImtpZCI6Ikg1RkdUNXhDUlJWU0NseG5vTXZCWEtUM1AyckhTRVZUNV9VdE16UFdCYTQifQ.eyJpc3MiOiJodHRwczovL2FwaS5vcmFuZ2UuY29tL29hdXRoL3YzIiwiYXVkIjpbIm9wZSJdLCJleHAiOjE3NDY2MDcxMjUsImlhdCI6MTc0NjYwMzUyNSwianRpIjoiZVAzRXVXZlRIdzQ2OGR2WkU5RTE0YXZxWGtOcHF6U0xYMUNGS1MzM292MWJrRkVvdW9qUjRyN2V1OVFKR1pibGdoUUs5YzRMclRFUlZiSndXdWRRVDNhNjM0b3hUQ0sxRnpkQSIsImNsaWVudF9pZCI6IkRHeGJRS2Q5SkhYTGRGYVdHdHYwRmZxRkZJN0d1MDNhIiwic3ViIjoiREd4YlFLZDlKSFhMZEZhV0d0djBGZnFGRkk3R3UwM2EiLCJjbGllbnRfbmFtZSI6eyJkZWZhdWx0IjoiUXVhbGlhdGFzX3NlbmRlciJ9LCJjbGllbnRfdGFnIjoiWVd4dTZPNEY5Z1VMMEdTRSIsInNjb3BlIjpbIm9wZTpzbXNfYWRtaW46djE6YWNjZXNzIiwib3BlOnNtc21lc3NhZ2luZzp2MTphY2Nlc3MiXSwibWNvIjoiU0VLQVBJIn0.pVsJS4zb7w4Con6HKGU4XSeqxZjs2rMO0zic8mUc0rkJs_ONc0Nwyly0smypOAZZ6zlT3Ah4dCPDMUnJeiSlqGyZBBCqo_egNg0qTRJVcPEs28LjIms7ShwzMBt9f4tx",
+  "expires_in": 3600
+}
+        
+[2025-05-07 07:38:44] Jeton d'accès obtenu avec succès: eyJ0eXAiOi...
+[2025-05-07 07:38:44] === TEST POUR LE NUMÉRO: +2250141399354 ===
+[2025-05-07 07:38:44] Envoi de SMS à tel:+2250141399354...
+[2025-05-07 07:38:44] Message: "Ceci est un test de l'API Orange SMS depuis Camydia Agency."
+[2025-05-07 07:38:44] URL de l'API: https://api.orange.com/smsmessaging/v1/outbound/tel%3A%2B2250595016840/requests
+[2025-05-07 07:38:44] Données JSON: {
+    "outboundSMSMessageRequest": {
+        "address": "tel:+2250141399354",
+        "outboundSMSTextMessage": {
+            "message": "Ceci est un test de l'API Orange SMS depuis Camydia Agency."
+        },
+        "senderAddress": "tel:+2250595016840"
+    }
+}
+[2025-05-07 07:38:45] Réponse HTTP: 201
+[2025-05-07 07:38:45] Réponse brute: {"outboundSMSMessageRequest":{"address":["tel:+2250141399354"],"senderAddress":"tel:+2250595016840","outboundSMSTextMessage":{"message":"Ceci est un test de l'API Orange SMS depuis Camydia Agency."},"resourceURL":"https://api.orange.com/smsmessaging/v1/outbound/tel:+2250595016840/requests/ee26b26e-aef7-41f9-8df2-c716faf6dcda"}}
+[2025-05-07 07:38:45] SMS envoyé avec succès à +2250141399354
+[2025-05-07 07:38:45] resourceURL: https://api.orange.com/smsmessaging/v1/outbound/tel:+2250595016840/requests/ee26b26e-aef7-41f9-8df2-c716faf6dcda
+[2025-05-07 07:38:47] === TEST POUR LE NUMÉRO: +2250768174439 ===
+[2025-05-07 07:38:47] Envoi de SMS à tel:+2250768174439...
+[2025-05-07 07:38:47] Message: "Ceci est un test de l'API Orange SMS depuis Camydia Agency."
+[2025-05-07 07:38:47] URL de l'API: https://api.orange.com/smsmessaging/v1/outbound/tel%3A%2B2250595016840/requests
+[2025-05-07 07:38:47] Données JSON: {
+    "outboundSMSMessageRequest": {
+        "address": "tel:+2250768174439",
+        "outboundSMSTextMessage": {
+            "message": "Ceci est un test de l'API Orange SMS depuis Camydia Agency."
+        },
+        "senderAddress": "tel:+2250595016840"
+    }
+}
+[2025-05-07 07:38:48] Réponse HTTP: 201
+[2025-05-07 07:38:48] Réponse brute: {"outboundSMSMessageRequest":{"address":["tel:+2250768174439"],"senderAddress":"tel:+2250595016840","outboundSMSTextMessage":{"message":"Ceci est un test de l'API Orange SMS depuis Camydia Agency."},"resourceURL":"https://api.orange.com/smsmessaging/v1/outbound/tel:+2250595016840/requests/3513417c-6b2c-4eee-8ac5-7a5cd55e4e97"}}
+[2025-05-07 07:38:48] SMS envoyé avec succès à +2250768174439
+[2025-05-07 07:38:48] resourceURL: https://api.orange.com/smsmessaging/v1/outbound/tel:+2250595016840/requests/3513417c-6b2c-4eee-8ac5-7a5cd55e4e97
+[2025-05-07 07:38:50] === RÉSUMÉ DES TESTS ===
+[2025-05-07 07:38:50] +2250141399354: SUCCÈS
+[2025-05-07 07:38:50] +2250768174439: SUCCÈS
+[2025-05-07 07:38:50] === FIN DU TEST DE L'API ORANGE SMS ===
+[2025-05-07 07:38:50] Le fichier de log complet est disponible à: /Users/ns2poportable/Documents/camydia-agency/tests/sms-api-test-results.log
+[2025-05-07 07:43:34] Chargement de la configuration depuis: /Users/ns2poportable/Documents/camydia-agency/src/App/Config/app.php
+[2025-05-07 07:43:34] Configuration chargée avec succès
+[2025-05-07 07:43:34] Client ID: DGxb...u03a
+[2025-05-07 07:43:34] Client Secret: S4yw...hBXs
+[2025-05-07 07:43:34] === DÉBUT DU TEST DE L'API ORANGE SMS ===
+[2025-05-07 07:43:34] Demande d'un jeton d'accès...
+[2025-05-07 07:43:35] Réponse HTTP: 200
+[2025-05-07 07:43:35] Réponse brute: 
+{
+  "token_type": "Bearer",
+  "access_token": "eyJ0eXAiOiJKV1QiLCJ2ZXIiOiIxLjAiLCJhbGciOiJFUzM4NCIsImtpZCI6Ikg1RkdUNXhDUlJWU0NseG5vTXZCWEtUM1AyckhTRVZUNV9VdE16UFdCYTQifQ.eyJpc3MiOiJodHRwczovL2FwaS5vcmFuZ2UuY29tL29hdXRoL3YzIiwiYXVkIjpbIm9wZSJdLCJleHAiOjE3NDY2MDc0MTYsImlhdCI6MTc0NjYwMzgxNiwianRpIjoiSnpJcG90RWZ5Y0NsalNvNTZsRlVkV25WSlpSS1BGVTVBMFk0bTBIcVl1MkwxOGVZbEFVOXhreUQ0Ymk3ZGppUVlJdDEyYmg0TUo0ckN0bTBscnpUQlg2eURYcDVwMG4yQ1AxbyIsImNsaWVudF9pZCI6IkRHeGJRS2Q5SkhYTGRGYVdHdHYwRmZxRkZJN0d1MDNhIiwic3ViIjoiREd4YlFLZDlKSFhMZEZhV0d0djBGZnFGRkk3R3UwM2EiLCJjbGllbnRfbmFtZSI6eyJkZWZhdWx0IjoiUXVhbGlhdGFzX3NlbmRlciJ9LCJjbGllbnRfdGFnIjoiWVd4dTZPNEY5Z1VMMEdTRSIsInNjb3BlIjpbIm9wZTpzbXNfYWRtaW46djE6YWNjZXNzIiwib3BlOnNtc21lc3NhZ2luZzp2MTphY2Nlc3MiXSwibWNvIjoiU0VLQVBJIn0.-F1zjruJ0FagZrYNv6RPK8kr1KKbts_0DCNZA4CwuaHJHkCYd-w93sLFd3I1fBaxx_OHdP6CVXlBgVi2jEZ0GOIVmhysfM0QUSDJRAuJq_1zFExST39D0Q_-K6qa03NY",
+  "expires_in": 3600
+}
+        
+[2025-05-07 07:43:35] Jeton d'accès obtenu avec succès: eyJ0eXAiOi...
+[2025-05-07 07:43:35] === TEST POUR LE NUMÉRO: +2250141399354 ===
+[2025-05-07 07:43:35] Envoi de SMS à tel:+2250141399354...
+[2025-05-07 07:43:35] Message: "Ceci est un test de l'API Orange SMS depuis Camydia Agency."
+[2025-05-07 07:43:35] URL de l'API: https://api.orange.com/smsmessaging/v1/outbound/tel%3A%2B2250595016840/requests
+[2025-05-07 07:43:35] Données JSON: {
+    "outboundSMSMessageRequest": {
+        "address": "tel:+2250141399354",
+        "outboundSMSTextMessage": {
+            "message": "Ceci est un test de l'API Orange SMS depuis Camydia Agency."
+        },
+        "senderAddress": "tel:+2250595016840",
+        "senderName": "Topdigital"
+    }
+}
+[2025-05-07 07:43:36] Réponse HTTP: 201
+[2025-05-07 07:43:36] Réponse brute: {"outboundSMSMessageRequest":{"address":["tel:+2250141399354"],"senderAddress":"tel:+2250595016840","senderName":"Topdigital","outboundSMSTextMessage":{"message":"Ceci est un test de l'API Orange SMS depuis Camydia Agency."},"resourceURL":"https://api.orange.com/smsmessaging/v1/outbound/tel:+2250595016840/requests/78e24bdf-3597-4f9d-a388-47c36c022d01"}}
+[2025-05-07 07:43:36] SMS envoyé avec succès à +2250141399354
+[2025-05-07 07:43:36] resourceURL: https://api.orange.com/smsmessaging/v1/outbound/tel:+2250595016840/requests/78e24bdf-3597-4f9d-a388-47c36c022d01
+[2025-05-07 07:43:38] === TEST POUR LE NUMÉRO: +2250768174439 ===
+[2025-05-07 07:43:38] Envoi de SMS à tel:+2250768174439...
+[2025-05-07 07:43:38] Message: "Ceci est un test de l'API Orange SMS depuis Camydia Agency."
+[2025-05-07 07:43:38] URL de l'API: https://api.orange.com/smsmessaging/v1/outbound/tel%3A%2B2250595016840/requests
+[2025-05-07 07:43:38] Données JSON: {
+    "outboundSMSMessageRequest": {
+        "address": "tel:+2250768174439",
+        "outboundSMSTextMessage": {
+            "message": "Ceci est un test de l'API Orange SMS depuis Camydia Agency."
+        },
+        "senderAddress": "tel:+2250595016840",
+        "senderName": "Topdigital"
+    }
+}
+[2025-05-07 07:43:39] Réponse HTTP: 201
+[2025-05-07 07:43:39] Réponse brute: {"outboundSMSMessageRequest":{"address":["tel:+2250768174439"],"senderAddress":"tel:+2250595016840","senderName":"Topdigital","outboundSMSTextMessage":{"message":"Ceci est un test de l'API Orange SMS depuis Camydia Agency."},"resourceURL":"https://api.orange.com/smsmessaging/v1/outbound/tel:+2250595016840/requests/6f9a8055-4cda-4333-85ed-11d9e73d9384"}}
+[2025-05-07 07:43:39] SMS envoyé avec succès à +2250768174439
+[2025-05-07 07:43:39] resourceURL: https://api.orange.com/smsmessaging/v1/outbound/tel:+2250595016840/requests/6f9a8055-4cda-4333-85ed-11d9e73d9384
+[2025-05-07 07:43:41] === RÉSUMÉ DES TESTS ===
+[2025-05-07 07:43:41] +2250141399354: SUCCÈS
+[2025-05-07 07:43:41] +2250768174439: SUCCÈS
+[2025-05-07 07:43:41] === FIN DU TEST DE L'API ORANGE SMS ===
+[2025-05-07 07:43:41] Le fichier de log complet est disponible à: /Users/ns2poportable/Documents/camydia-agency/tests/sms-api-test-results.log

@@ -1,18 +1,192 @@
 {% extends 'layout.twig' %}
 
+{% block title %}Notre Histoire & Équipe - Camydia Agency{% endblock %}
+
 {% block content %}
-<div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold mb-4">Notre Histoire</h1>
-    <div class="prose max-w-none">
-        <p>Camydia Agency a été fondée en 2010 avec une vision claire : fournir des services d'hôtesses professionnelles de qualité supérieure pour tous types d'événements.</p>
+<div class="bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Héros/Introduction -->
+        <header class="pt-20 pb-12 sm:pt-20 sm:pb-12 text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary dark:text-primary-400 mb-4 sm:mb-6 pt-8">
+                Notre Histoire & Équipe
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-md sm:max-w-2xl mx-auto">
+                Découvrez qui nous sommes, notre parcours et les personnes exceptionnelles qui font de Camydia Agency un partenaire de confiance pour vos événements.
+            </p>
+        </header>
+
+        <!-- Section Notre Histoire -->
+        <section class="py-4 sm:py-6 lg:py-10">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-center">
+                <div class="lg:col-span-2 order-2 lg:order-1">
+                    <div class="prose prose-base sm:prose-lg lg:prose-xl max-w-none dark:prose-invert text-gray-700 dark:text-gray-300">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-6">
+                            Notre Histoire
+                        </h2>
+                        <p class="mb-6">
+                            Camydia Agency a été fondée en 2010 avec une vision claire : fournir des services d'hôtesses et d'hôtes professionnels de qualité supérieure pour tous types d'événements. Depuis plus d'une décennie, nous nous démarquons par notre engagement envers l'excellence et le professionnalisme.
+                        </p>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white mb-4">
+                            Notre Engagement
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 w-6 h-6 text-primary dark:text-primary-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span>Excellence dans le service client à chaque interaction</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 w-6 h-6 text-primary dark:text-primary-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span>Professionnalisme irréprochable dans tous nos services</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 w-6 h-6 text-primary dark:text-primary-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span>Approche personnalisée adaptée à chaque client et événement</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 w-6 h-6 text-primary dark:text-primary-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span>Formation continue de notre équipe pour maintenir les standards les plus élevés</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-3 order-1 lg:order-2">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-6 lg:hidden">
+                        Notre Agence en Images
+                    </h2>
+                    <div class="grid grid-cols-2 gap-4 sm:gap-6">
+                        <div class="group overflow-hidden rounded-xl shadow-lg aspect-w-1 aspect-h-1 sm:aspect-w-4 sm:aspect-h-3">
+                            <img src="/images/content/about/others/fe1c7.jpg" alt="Événement organisé par Camydia Agency" class="w-full h-full object-cover object-top transition-transform duration-500 ease-in-out group-hover:scale-105">
+                        </div>
+                        <div class="group overflow-hidden rounded-xl shadow-lg aspect-w-1 aspect-h-1 sm:aspect-w-4 sm:aspect-h-3">
+                            <img src="/images/content/about/others/dcef1.jpg" alt="Équipe Camydia en action" class="w-full h-full object-cover object-top transition-transform duration-500 ease-in-out group-hover:scale-105">
+                        </div>
+                        <div class="group overflow-hidden rounded-xl shadow-lg aspect-w-1 aspect-h-1 sm:aspect-w-4 sm:aspect-h-3 hidden sm:block">
+                            <img src="/images/content/about/others/526f2.jpg" alt="Préparation d'un événement Camydia" class="w-full h-full object-cover object-top transition-transform duration-500 ease-in-out group-hover:scale-105">
+                        </div>
+                        <div class="group overflow-hidden rounded-xl shadow-lg aspect-w-1 aspect-h-1 sm:aspect-w-4 sm:aspect-h-3 hidden sm:block">
+                            <img src="/images/content/about/others/2fc62.jpg" alt="Service client premium Camydia" class="w-full h-full object-cover object-top transition-transform duration-500 ease-in-out group-hover:scale-105">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Fondatrice -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-slate-50 dark:bg-slate-800 rounded-xl sm:rounded-2xl">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-10 sm:mb-12 text-center text-primary dark:text-primary-400">
+                    Notre Fondatrice
+                </h2>
+                <div class="flex flex-col lg:flex-row gap-10 items-center">
+                    <div class="lg:w-1/3">
+                        <div class="group overflow-hidden rounded-xl shadow-lg">
+                            <img src="/images/content/about/carmen/13488.jpg" alt="Carmen, Fondatrice de Camydia Agency" class="w-full h-full object-cover object-top transition-transform duration-500 ease-in-out group-hover:scale-105">
+                        </div>
+                    </div>
+                    <div class="lg:w-2/3 prose prose-base sm:prose-lg lg:prose-xl max-w-none dark:prose-invert">
+                        <h3 class="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-4">Carmen</h3>
+                        <p class="text-gray-700 dark:text-gray-300 italic mb-4">
+                            Fondatrice et directrice de CAMYDIA AGENCY, une agence spécialisée dans la fourniture d'hôtesses et d'hôtes pour une variété d'événements. Avec ma passion pour l'excellence du service et une attention particulière aux détails, j'a bâti une agence réputée pour son professionnalisme et sa capacité à répondre aux besoins spécifiques de chaque client.
+                        </p>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            Forte d'une expérience significative dans le secteur de l'événementiel, nous comprenons l'importance cruciale d'un accueil chaleureux et efficace pour la réussite de tout événement. Qu'il s'agisse de conférences d'envergure, de soirées privées exclusives ou de lancements de produits innovants, nous nous engageons à fournir un personnel qualifié et attentif, capable de créer une atmosphère accueillante et professionnelle.
+                        </p>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            Aujourd'hui, CAMYDIA AGENCY s'est imposée comme un partenaire de confiance pour les entreprises et les particuliers souhaitant offrir une expérience mémorable à leurs invités. Je continue d'œuvrer avec passion à offrir des services d'excellence à notre clientèle.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <h2 class="text-2xl font-bold mt-8 mb-4">Notre Engagement</h2>
-        <ul class="list-disc pl-6">
-            <li>Excellence dans le service client</li>
-            <li>Professionnalisme à chaque étape</li>
-            <li>Approche personnalisée</li>
-        </ul>
+        <!-- Section Équipe et Processus de Sélection -->
+        <section class="py-16 sm:py-20 lg:py-24">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-10 sm:mb-12 text-center text-primary dark:text-primary-400">
+                    Notre Équipe d'Élite
+                </h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    {% for image in ['24376.jpg', '61b2d.jpg', 'cb9ac.jpg'] %}
+                    <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <div class="h-[250px] overflow-hidden">
+                            <img src="/images/content/about/others/{{ image }}" alt="Membre de l'équipe Camydia" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">{{ ['Sofia', 'Émilie', 'Juliette'][loop.index0] }}</h3>
+                            <p class="text-gray-600 dark:text-gray-300 font-semibold">{{ ['Coordinatrice d\'événements', 'Cheffe d\'équipe', 'Responsable clientèle'][loop.index0] }}</p>
+                            <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+                                {{ [
+                                    'Avec 8 ans d\'expérience dans le secteur, Sofia coordonne nos équipes lors d\'événements prestigieux avec élégance et précision.',
+                                    'Ancienne responsable dans l\'hôtellerie de luxe, Émilie apporte son savoir-faire à chaque mission, garantissant un service impeccable.',
+                                    'Passionnée par la relation client, Juliette s\'assure que chaque demande soit traitée avec attention et professionnalisme.'
+                                ][loop.index0] }}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    <div class="prose prose-base sm:prose-lg lg:prose-xl max-w-none dark:prose-invert">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Notre Processus de Sélection</h3>
+                        <p class="mb-4">
+                            Notre équipe est constituée des meilleurs talents du secteur, rigoureusement sélectionnés selon des critères exigeants pour garantir l'excellence de nos services.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 w-6 h-6 text-primary dark:text-primary-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span>Formation professionnelle complète</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 w-6 h-6 text-primary dark:text-primary-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span>Expérience vérifiée dans l'événementiel et l'accueil</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 w-6 h-6 text-primary dark:text-primary-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span>Compétences linguistiques évaluées</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 w-6 h-6 text-primary dark:text-primary-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                <span>Test de personnalité et mise en situation pratique</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mt-6 lg:mt-0">
+                        <div class="group overflow-hidden rounded-xl shadow-lg">
+                            <img src="/images/content/about/others/796a8.jpg" alt="Formation des hôtesses Camydia" class="w-full h-full object-cover object-top transition-transform duration-500 ease-in-out group-hover:scale-105">
+                        </div>
+                        <div class="group overflow-hidden rounded-xl shadow-lg">
+                            <img src="/images/content/about/others/f290b.jpg" alt="Équipe Camydia en briefing" class="w-full h-full object-cover object-top transition-transform duration-500 ease-in-out group-hover:scale-105">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
+        <!-- Section CTA -->
+        <section class="py-16 sm:py-20 lg:py-24 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-primary dark:text-primary-400 mb-6 sm:mb-8">
+                Rejoignez Notre Aventure
+            </h2>
+            <p class="text-lg text-gray-700 dark:text-gray-300 max-w-md sm:max-w-2xl lg:max-w-3xl mx-auto mb-8 sm:mb-10">
+                Vous cherchez des hôtesses et hôtes professionnels pour votre prochain événement ? Ou souhaitez-vous rejoindre notre équipe talentueuse ? Contactez-nous dès aujourd'hui pour discuter de vos besoins ou candidater.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="/contact" 
+                   class="inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 sm:py-4 sm:px-10 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 text-base sm:text-lg group">
+                    Demander un Devis
+                    <svg class="ml-2 -mr-1 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </a>
+                <a href="/contact" 
+                   class="inline-flex items-center justify-center bg-white border-2 border-primary text-primary hover:bg-primary/10 font-semibold py-3 px-8 sm:py-4 sm:px-10 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out text-base sm:text-lg">
+                    Postuler dans Notre Équipe
+                </a>
+            </div>
+        </section>
+
     </div>
 </div>
 {% endblock %}

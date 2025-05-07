@@ -1,0 +1,138 @@
+{% extends 'layout.twig' %}
+
+{% block title %}Administration - Détails du contact{% endblock %}
+
+{% block content %}
+<div class="bg-white dark:bg-gray-900 min-h-screen">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-6">
+            <a href="/admin/contacts" class="inline-flex items-center text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-400">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Retour à la liste
+            </a>
+        </div>
+
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-primary dark:text-primary-400">Détails du contact #{{ contact.id }}</h1>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Message reçu le {{ contact.created_at|date("d/m/Y à H:i") }}</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Informations principales -->
+            <div class="lg:col-span-2">
+                <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+                        <h2 class="text-xl font-semibold text-gray-800 dark:text-white">Détails du message</h2>
+                        <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full
+                        {% if contact.status == 'new' %}
+                            bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200
+                        {% elseif contact.status == 'notified' %}
+                            bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200
+                        {% elseif contact.status == 'processing' %}
+                            bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200
+                        {% elseif contact.status == 'completed' %}
+                            bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200
+                        {% else %}
+                            bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200
+                        {% endif %}
+                        ">
+                            {{ contact.status }}
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-6">
+                            <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Sujet</h3>
+                            <p class="text-base text-gray-900 dark:text-white font-semibold">{{ contact.subject }}</p>
+                        </div>
+                        <div class="mb-6">
+                            <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Message</h3>
+                            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 text-gray-800 dark:text-gray-200">
+                                {{ contact.message|nl2br }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informations du contact -->
+            <div>
+                <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
+                        <h2 class="text-xl font-semibold text-gray-800 dark:text-white">Informations de contact</h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Nom</h3>
+                            <p class="text-base text-gray-900 dark:text-white">{{ contact.name }}</p>
+                        </div>
+                        <div class="mb-4">
+                            <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Email</h3>
+                            <p class="text-base text-gray-900 dark:text-white">
+                                <a href="mailto:{{ contact.email }}" class="text-primary hover:underline">{{ contact.email }}</a>
+                            </p>
+                        </div>
+                        {% if contact.phone %}
+                        <div class="mb-4">
+                            <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Téléphone</h3>
+                            <p class="text-base text-gray-900 dark:text-white">
+                                <a href="tel:{{ contact.phone }}" class="text-primary hover:underline">{{ contact.phone }}</a>
+                            </p>
+                        </div>
+                        {% endif %}
+                        <div class="mb-4">
+                            <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">IP</h3>
+                            <p class="text-base text-gray-900 dark:text-white">{{ contact.ip_address }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden mt-6">
+                    <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
+                        <h2 class="text-xl font-semibold text-gray-800 dark:text-white">Actions</h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4">
+                            <button type="button" onclick="updateStatus('processing')" class="w-full inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
+                                Marquer en traitement
+                            </button>
+                            <button type="button" onclick="updateStatus('completed')" class="w-full inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                                Marquer comme traité
+                            </button>
+                            <a href="mailto:{{ contact.email }}" class="w-full inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                Répondre par email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function updateStatus(status) {
+    fetch('/admin/contacts/{{ contact.id }}/status', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'status=' + status
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            location.reload();
+        } else {
+            alert('Erreur: ' + (data.message || 'Impossible de mettre à jour le statut'));
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Une erreur est survenue.');
+    });
+}
+</script>
+{% endblock %}

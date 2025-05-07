@@ -67,7 +67,7 @@ Construire le site web de **Camydia Agency** en suivant ce plan de développemen
   - Test de la connexion SMTP
   - Mise en place des templates d'emails :
     - Email de confirmation automatique au client
-    - Copie au secrétariat de l'agence (secretariat@camydia-agency.com)
+    - Copie au secrétariat de l'agence (secretariat@camydia-agency.site)
     - Template personnalisé incluant :
       - Remerciement pour la prise de contact
       - Récapitulatif des informations soumises

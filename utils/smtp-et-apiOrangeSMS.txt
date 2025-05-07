@@ -1,0 +1,11 @@
+// Paramètres d'authentification pour l'API Orange sms
+$client_id = 'DGxbQKd9JHXLdFaWGtv0FfqFFI7Gu03a';
+$client_secret = 'S4ywfdZUjNvOXErMr5NyQwgliBCdXIAYp1DcibKThBXs';
+
+// Paramètres SMTP globaux
+define('SMTP_HOST', 'mail.topdigitalevel.site');
+define('SMTP_AUTH', true);
+define('SMTP_USERNAME', 'info@topdigitalevel.site');
+define('SMTP_PASSWORD', 'undPzZ3x3U');
+define('SMTP_SECURE', 'tls');
+define('SMTP_PORT', 587);

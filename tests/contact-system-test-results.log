@@ -1,0 +1,529 @@
+==== DÉBUT DES TESTS D'INTÉGRATION DU SYSTÈME DE CONTACT ====
+
+Initialisation des services...
+==== DÉBUT DES TESTS D'INTÉGRATION DU SYSTÈME DE CONTACT ====
+
+Date et heure : 2025-05-07 07:47:33
+
+Configuration de l'environnement de test...
+✓ Tous les fichiers critiques sont présents
+Environnement de test prêt.
+
+==== EXÉCUTION DES TESTS ====
+
+
+--- Test de PhoneNumberUtility ---
+
+
+>> Test: Normalisation des numéros ivoiriens
+✓ Normalisation de '0758232792' en '+2250758232792' réussie
+✓ Normalisation de '758232792' en '+225758232792' réussie
+✗ Normalisation de '+225 07 58 23 27 92' a donné '+2250758232792' au lieu de '+225758232792'
+✗ Normalisation de '00225 07 58 23 27 92' a donné '+2250758232792' au lieu de '+225758232792'
+------------------------
+
+>> Test: Détection des numéros ivoiriens
+✓ Détection de '+2250758232792' comme ivoirien réussie
+✓ Détection de '+225 07 58 23 27 92' comme ivoirien réussie
+✓ Détection de '00225 0758232792' comme ivoirien réussie
+✓ Détection de '0758232792' comme ivoirien réussie
+✓ Détection de '758232792' comme ivoirien réussie
+✓ Détection de '+33612345678' comme non ivoirien réussie
+✓ Détection de '+1 202 555 1234' comme non ivoirien réussie
+------------------------
+
+>> Test: Validation des numéros mobiles ivoiriens
+✗ Validation de '+2250758232792' a donné invalide au lieu de valide
+✗ Validation de '+225 07 58 23 27 92' a donné invalide au lieu de valide
+✗ Validation de '+2250141399354' a donné invalide au lieu de valide
+✗ Validation de '+2250768174439' a donné invalide au lieu de valide
+✗ Validation de '+225 01 23 45 67 89' a donné invalide au lieu de valide
+✗ Validation de '+225 50 00 00 00' a donné invalide au lieu de valide
+✓ Validation de '+33612345678' comme mobile ivoirien invalide réussie
+✓ Validation de 'texte' comme mobile ivoirien invalide réussie
+✓ Validation de '' comme mobile ivoirien invalide réussie
+------------------------
+
+>> Test: Éligibilité SMS
+✗ Éligibilité SMS de '+2250758232792' a donné non éligible au lieu de éligible
+✗ Éligibilité SMS de '+225 07 58 23 27 92' a donné non éligible au lieu de éligible
+✗ Éligibilité SMS de '+2250141399354' a donné non éligible au lieu de éligible
+✗ Éligibilité SMS de '+2250768174439' a donné non éligible au lieu de éligible
+✗ Éligibilité SMS de '+225 01 23 45 67 89' a donné non éligible au lieu de éligible
+✗ Éligibilité SMS de '+225 50 00 00 00' a donné non éligible au lieu de éligible
+✓ Éligibilité SMS de '+33612345678' comme non éligible réussie
+✓ Éligibilité SMS de 'texte' comme non éligible réussie
+✓ Éligibilité SMS de '' comme non éligible réussie
+------------------------
+
+>> Test: Formatage pour affichage
+✗ Formatage de '+2250758232792' a donné '+2250 75 82 32 79 2' au lieu de '+225 0 75 82 32 79 2'
+✗ Formatage de '0758232792' a donné '+2250 75 82 32 79 2' au lieu de '+225 0 75 82 32 79 2'
+✗ Formatage de '+33612345678' a donné '+3361 23 45 67 8' au lieu de '+33 6 12 34 56 78'
+------------------------
+
+--- Test de configuration ---
+
+
+>> Test: Configuration de l'API SMS Orange
+ID client de l'API Orange: DGxb...u03a
+Secret client de l'API Orange: S4yw...hBXs
+------------------------
+
+>> Test: Configuration SMTP
+✓ Tous les paramètres SMTP sont définis
+------------------------
+
+>> Test: Configuration des destinataires de notification
+✓ ADMIN_EMAIL défini : camydia94@gmail.com
+✓ WEBMASTER_EMAIL défini : studioabidjanpro1@gmail.com
+✓ ADMIN_PHONE défini : +2250758232792
+✓ WEBMASTER_PHONE défini : +2250777104936
+Téléphone admin (+2250758232792) est invalide pour les SMS
+Téléphone webmaster (+2250777104936) est invalide pour les SMS
+------------------------
+
+--- Test de validation SMS (analyse de code) ---
+
+
+>> Test: Analyse du code SmsService
+Le nom d'expéditeur 'Topdigital' est absent dans le code
+La vérification des numéros ivoiriens est présente dans le code
+La validation des numéros ivoiriens avant envoi SMS est présente dans le code
+Le logging des SMS est présent dans le code
+Le logging des erreurs SMS est absent dans le code
+Le logging des SMS ignorés est absent dans le code
+La méthode isSmsEligible est correctement implémentée pour n'accepter que les numéros ivoiriens
+------------------------
+
+>> Test: Analyse du code ContactService
+Envoi de SMS à l'administrateur : absent
+Envoi de SMS au webmaster : absent
+Envoi d'email à l'administrateur : absent
+Envoi d'email au webmaster : absent
+Envoi d'email au client : absent
+------------------------
+
+==== RÉSUMÉ DES TESTS ====
+
+Total des tests : 49
+Tests réussis : 22
+Tests échoués : 27
+Taux de réussite : 44.9%
+
+Tests échoués :
+- Normalisation de '+225 07 58 23 27 92'
+- Normalisation de '00225 07 58 23 27 92'
+- Validation de '+2250758232792'
+- Validation de '+225 07 58 23 27 92'
+- Validation de '+2250141399354'
+- Validation de '+2250768174439'
+- Validation de '+225 01 23 45 67 89'
+- Validation de '+225 50 00 00 00'
+- Éligibilité SMS de '+2250758232792'
+- Éligibilité SMS de '+225 07 58 23 27 92'
+- Éligibilité SMS de '+2250141399354'
+- Éligibilité SMS de '+2250768174439'
+- Éligibilité SMS de '+225 01 23 45 67 89'
+- Éligibilité SMS de '+225 50 00 00 00'
+- Formatage de '+2250758232792'
+- Formatage de '0758232792'
+- Formatage de '+33612345678'
+- Format téléphone admin valide
+- Format téléphone webmaster valide
+- Présence de Topdigital comme nom d'expéditeur
+- Présence du logging des erreurs SMS
+- Présence du logging des SMS ignorés
+- Envoi de SMS à l'administrateur
+- Envoi de SMS au webmaster
+- Envoi d'email à l'administrateur
+- Envoi d'email au webmaster
+- Envoi d'email au client
+
+==== FIN DES TESTS ====
+Le rapport de test complet est disponible dans : /Users/ns2poportable/Documents/camydia-agency/tests/contact-system-test-results.log
+==== DÉBUT DES TESTS D'INTÉGRATION DU SYSTÈME DE CONTACT ====
+
+Date et heure : 2025-05-07 07:49:00
+
+Configuration de l'environnement de test...
+✓ Tous les fichiers critiques sont présents
+Environnement de test prêt.
+
+==== EXÉCUTION DES TESTS ====
+
+
+--- Test de PhoneNumberUtility ---
+
+
+>> Test: Normalisation des numéros ivoiriens
+✓ Normalisation de '0758232792' en '+2250758232792' réussie
+✓ Normalisation de '758232792' en '+225758232792' réussie
+✗ Normalisation de '+225 07 58 23 27 92' a donné '+2250758232792' au lieu de '+225758232792'
+✗ Normalisation de '00225 07 58 23 27 92' a donné '+2250758232792' au lieu de '+225758232792'
+------------------------
+
+>> Test: Détection des numéros ivoiriens
+✓ Détection de '+2250758232792' comme ivoirien réussie
+✓ Détection de '+225 07 58 23 27 92' comme ivoirien réussie
+✓ Détection de '00225 0758232792' comme ivoirien réussie
+✓ Détection de '0758232792' comme ivoirien réussie
+✓ Détection de '758232792' comme ivoirien réussie
+✓ Détection de '+33612345678' comme non ivoirien réussie
+✓ Détection de '+1 202 555 1234' comme non ivoirien réussie
+------------------------
+
+>> Test: Validation des numéros mobiles ivoiriens
+✗ Validation de '+2250758232792' a donné invalide au lieu de valide
+✗ Validation de '+225 07 58 23 27 92' a donné invalide au lieu de valide
+✗ Validation de '+2250141399354' a donné invalide au lieu de valide
+✗ Validation de '+2250768174439' a donné invalide au lieu de valide
+✗ Validation de '+225 01 23 45 67 89' a donné invalide au lieu de valide
+✗ Validation de '+225 50 00 00 00' a donné invalide au lieu de valide
+✓ Validation de '+33612345678' comme mobile ivoirien invalide réussie
+✓ Validation de 'texte' comme mobile ivoirien invalide réussie
+✓ Validation de '' comme mobile ivoirien invalide réussie
+------------------------
+
+>> Test: Éligibilité SMS
+✗ Éligibilité SMS de '+2250758232792' a donné non éligible au lieu de éligible
+✗ Éligibilité SMS de '+225 07 58 23 27 92' a donné non éligible au lieu de éligible
+✗ Éligibilité SMS de '+2250141399354' a donné non éligible au lieu de éligible
+✗ Éligibilité SMS de '+2250768174439' a donné non éligible au lieu de éligible
+✗ Éligibilité SMS de '+225 01 23 45 67 89' a donné non éligible au lieu de éligible
+✗ Éligibilité SMS de '+225 50 00 00 00' a donné non éligible au lieu de éligible
+✓ Éligibilité SMS de '+33612345678' comme non éligible réussie
+✓ Éligibilité SMS de 'texte' comme non éligible réussie
+✓ Éligibilité SMS de '' comme non éligible réussie
+------------------------
+
+>> Test: Formatage pour affichage
+✗ Formatage de '+2250758232792' a donné '+2250 75 82 32 79 2' au lieu de '+225 0 75 82 32 79 2'
+✗ Formatage de '0758232792' a donné '+2250 75 82 32 79 2' au lieu de '+225 0 75 82 32 79 2'
+✓ Formatage de '+33612345678' pour affichage réussi
+------------------------
+
+--- Test de configuration ---
+
+
+>> Test: Configuration de l'API SMS Orange
+ID client de l'API Orange: DGxb...u03a
+Secret client de l'API Orange: S4yw...hBXs
+------------------------
+
+>> Test: Configuration SMTP
+✓ Tous les paramètres SMTP sont définis
+------------------------
+
+>> Test: Configuration des destinataires de notification
+✓ ADMIN_EMAIL défini : camydia94@gmail.com
+✓ WEBMASTER_EMAIL défini : studioabidjanpro1@gmail.com
+✓ ADMIN_PHONE défini : +2250758232792
+✓ WEBMASTER_PHONE défini : +2250777104936
+Téléphone admin (+2250758232792) est invalide pour les SMS
+Téléphone webmaster (+2250777104936) est invalide pour les SMS
+------------------------
+
+--- Test de validation SMS (analyse de code) ---
+
+
+>> Test: Analyse du code SmsService
+Le nom d'expéditeur 'Topdigital' est absent dans le code
+La vérification des numéros ivoiriens est présente dans le code
+La validation des numéros ivoiriens avant envoi SMS est présente dans le code
+Le logging des SMS est présent dans le code
+Le logging des erreurs SMS est présent dans le code
+Le logging des SMS ignorés est présent dans le code
+La méthode isSmsEligible est correctement implémentée pour n'accepter que les numéros ivoiriens
+------------------------
+
+>> Test: Analyse du code ContactService
+Envoi de SMS à l'administrateur : absent
+Envoi de SMS au webmaster : absent
+Envoi d'email à l'administrateur : absent
+Envoi d'email au webmaster : absent
+Envoi d'email au client : absent
+------------------------
+
+==== RÉSUMÉ DES TESTS ====
+
+Total des tests : 49
+Tests réussis : 25
+Tests échoués : 24
+Taux de réussite : 51.02%
+
+Tests échoués :
+- Normalisation de '+225 07 58 23 27 92'
+- Normalisation de '00225 07 58 23 27 92'
+- Validation de '+2250758232792'
+- Validation de '+225 07 58 23 27 92'
+- Validation de '+2250141399354'
+- Validation de '+2250768174439'
+- Validation de '+225 01 23 45 67 89'
+- Validation de '+225 50 00 00 00'
+- Éligibilité SMS de '+2250758232792'
+- Éligibilité SMS de '+225 07 58 23 27 92'
+- Éligibilité SMS de '+2250141399354'
+- Éligibilité SMS de '+2250768174439'
+- Éligibilité SMS de '+225 01 23 45 67 89'
+- Éligibilité SMS de '+225 50 00 00 00'
+- Formatage de '+2250758232792'
+- Formatage de '0758232792'
+- Format téléphone admin valide
+- Format téléphone webmaster valide
+- Présence de Topdigital comme nom d'expéditeur
+- Envoi de SMS à l'administrateur
+- Envoi de SMS au webmaster
+- Envoi d'email à l'administrateur
+- Envoi d'email au webmaster
+- Envoi d'email au client
+
+==== FIN DES TESTS ====
+Le rapport de test complet est disponible dans : /Users/ns2poportable/Documents/camydia-agency/tests/contact-system-test-results.log
+==== DÉBUT DES TESTS D'INTÉGRATION DU SYSTÈME DE CONTACT ====
+
+Date et heure : 2025-05-07 07:50:30
+
+Configuration de l'environnement de test...
+✓ Tous les fichiers critiques sont présents
+Environnement de test prêt.
+
+==== EXÉCUTION DES TESTS ====
+
+
+--- Test de PhoneNumberUtility ---
+
+
+>> Test: Normalisation des numéros ivoiriens
+✓ Normalisation de '0758232792' en '+2250758232792' réussie
+✓ Normalisation de '758232792' en '+225758232792' réussie
+✓ Normalisation de '+225 07 58 23 27 92' en '+2250758232792' réussie
+✓ Normalisation de '00225 07 58 23 27 92' en '+2250758232792' réussie
+------------------------
+
+>> Test: Détection des numéros ivoiriens
+✓ Détection de '+2250758232792' comme ivoirien réussie
+✓ Détection de '+225 07 58 23 27 92' comme ivoirien réussie
+✓ Détection de '00225 0758232792' comme ivoirien réussie
+✓ Détection de '0758232792' comme ivoirien réussie
+✓ Détection de '758232792' comme ivoirien réussie
+✓ Détection de '+33612345678' comme non ivoirien réussie
+✓ Détection de '+1 202 555 1234' comme non ivoirien réussie
+------------------------
+
+>> Test: Validation des numéros mobiles ivoiriens
+✗ Validation de '+2250758232792' a donné invalide au lieu de valide
+✗ Validation de '+225 07 58 23 27 92' a donné invalide au lieu de valide
+✗ Validation de '+2250141399354' a donné invalide au lieu de valide
+✗ Validation de '+2250768174439' a donné invalide au lieu de valide
+✗ Validation de '+225 01 23 45 67 89' a donné invalide au lieu de valide
+✗ Validation de '+225 50 00 00 00' a donné invalide au lieu de valide
+✓ Validation de '+33612345678' comme mobile ivoirien invalide réussie
+✓ Validation de 'texte' comme mobile ivoirien invalide réussie
+✓ Validation de '' comme mobile ivoirien invalide réussie
+------------------------
+
+>> Test: Éligibilité SMS
+✗ Éligibilité SMS de '+2250758232792' a donné non éligible au lieu de éligible
+✗ Éligibilité SMS de '+225 07 58 23 27 92' a donné non éligible au lieu de éligible
+✗ Éligibilité SMS de '+2250141399354' a donné non éligible au lieu de éligible
+✗ Éligibilité SMS de '+2250768174439' a donné non éligible au lieu de éligible
+✗ Éligibilité SMS de '+225 01 23 45 67 89' a donné non éligible au lieu de éligible
+✗ Éligibilité SMS de '+225 50 00 00 00' a donné non éligible au lieu de éligible
+✓ Éligibilité SMS de '+33612345678' comme non éligible réussie
+✓ Éligibilité SMS de 'texte' comme non éligible réussie
+✓ Éligibilité SMS de '' comme non éligible réussie
+------------------------
+
+>> Test: Formatage pour affichage
+✗ Formatage de '+2250758232792' a donné '+2250758232792' au lieu de '+225 0 75 82 32 79 2'
+✗ Formatage de '0758232792' a donné '+2250758232792' au lieu de '+225 0 75 82 32 79 2'
+✓ Formatage de '+33612345678' pour affichage réussi
+------------------------
+
+--- Test de configuration ---
+
+
+>> Test: Configuration de l'API SMS Orange
+ID client de l'API Orange: DGxb...u03a
+Secret client de l'API Orange: S4yw...hBXs
+------------------------
+
+>> Test: Configuration SMTP
+✓ Tous les paramètres SMTP sont définis
+------------------------
+
+>> Test: Configuration des destinataires de notification
+✓ ADMIN_EMAIL défini : camydia94@gmail.com
+✓ WEBMASTER_EMAIL défini : studioabidjanpro1@gmail.com
+✓ ADMIN_PHONE défini : +2250758232792
+✓ WEBMASTER_PHONE défini : +2250777104936
+Téléphone admin (+2250758232792) est invalide pour les SMS
+Téléphone webmaster (+2250777104936) est invalide pour les SMS
+------------------------
+
+--- Test de validation SMS (analyse de code) ---
+
+
+>> Test: Analyse du code SmsService
+Le nom d'expéditeur 'Topdigital' est présent dans le code
+La vérification des numéros ivoiriens est présente dans le code
+La validation des numéros ivoiriens avant envoi SMS est présente dans le code
+Le logging des SMS est présent dans le code
+Le logging des erreurs SMS est présent dans le code
+Le logging des SMS ignorés est présent dans le code
+La méthode isSmsEligible est correctement implémentée pour n'accepter que les numéros ivoiriens
+------------------------
+
+>> Test: Analyse du code ContactService
+Envoi de SMS à l'administrateur : absent
+Envoi de SMS au webmaster : absent
+Envoi d'email à l'administrateur : absent
+Envoi d'email au webmaster : absent
+Envoi d'email au client : absent
+------------------------
+
+==== RÉSUMÉ DES TESTS ====
+
+Total des tests : 49
+Tests réussis : 28
+Tests échoués : 21
+Taux de réussite : 57.14%
+
+Tests échoués :
+- Validation de '+2250758232792'
+- Validation de '+225 07 58 23 27 92'
+- Validation de '+2250141399354'
+- Validation de '+2250768174439'
+- Validation de '+225 01 23 45 67 89'
+- Validation de '+225 50 00 00 00'
+- Éligibilité SMS de '+2250758232792'
+- Éligibilité SMS de '+225 07 58 23 27 92'
+- Éligibilité SMS de '+2250141399354'
+- Éligibilité SMS de '+2250768174439'
+- Éligibilité SMS de '+225 01 23 45 67 89'
+- Éligibilité SMS de '+225 50 00 00 00'
+- Formatage de '+2250758232792'
+- Formatage de '0758232792'
+- Format téléphone admin valide
+- Format téléphone webmaster valide
+- Envoi de SMS à l'administrateur
+- Envoi de SMS au webmaster
+- Envoi d'email à l'administrateur
+- Envoi d'email au webmaster
+- Envoi d'email au client
+
+==== FIN DES TESTS ====
+Le rapport de test complet est disponible dans : /Users/ns2poportable/Documents/camydia-agency/tests/contact-system-test-results.log
+==== DÉBUT DES TESTS D'INTÉGRATION DU SYSTÈME DE CONTACT ====
+
+Date et heure : 2025-05-07 07:52:36
+
+Configuration de l'environnement de test...
+✓ Tous les fichiers critiques sont présents
+Environnement de test prêt.
+
+==== EXÉCUTION DES TESTS ====
+
+
+--- Test de PhoneNumberUtility ---
+
+
+>> Test: Normalisation des numéros ivoiriens
+✓ Normalisation de '0758232792' en '+2250758232792' réussie
+✓ Normalisation de '758232792' en '+225758232792' réussie
+✓ Normalisation de '+225 07 58 23 27 92' en '+2250758232792' réussie
+✓ Normalisation de '00225 07 58 23 27 92' en '+2250758232792' réussie
+------------------------
+
+>> Test: Détection des numéros ivoiriens
+✓ Détection de '+2250758232792' comme ivoirien réussie
+✓ Détection de '+225 07 58 23 27 92' comme ivoirien réussie
+✓ Détection de '00225 0758232792' comme ivoirien réussie
+✓ Détection de '0758232792' comme ivoirien réussie
+✓ Détection de '758232792' comme ivoirien réussie
+✓ Détection de '+33612345678' comme non ivoirien réussie
+✓ Détection de '+1 202 555 1234' comme non ivoirien réussie
+------------------------
+
+>> Test: Validation des numéros mobiles ivoiriens
+✓ Validation de '+2250758232792' comme mobile ivoirien valide réussie
+✓ Validation de '+225 07 58 23 27 92' comme mobile ivoirien valide réussie
+✓ Validation de '+2250141399354' comme mobile ivoirien valide réussie
+✓ Validation de '+2250768174439' comme mobile ivoirien valide réussie
+✓ Validation de '+225 01 23 45 67 89' comme mobile ivoirien valide réussie
+✓ Validation de '+225 50 00 00 00' comme mobile ivoirien valide réussie
+✓ Validation de '+33612345678' comme mobile ivoirien invalide réussie
+✓ Validation de 'texte' comme mobile ivoirien invalide réussie
+✓ Validation de '' comme mobile ivoirien invalide réussie
+------------------------
+
+>> Test: Éligibilité SMS
+✓ Éligibilité SMS de '+2250758232792' comme éligible réussie
+✓ Éligibilité SMS de '+225 07 58 23 27 92' comme éligible réussie
+✓ Éligibilité SMS de '+2250141399354' comme éligible réussie
+✓ Éligibilité SMS de '+2250768174439' comme éligible réussie
+✓ Éligibilité SMS de '+225 01 23 45 67 89' comme éligible réussie
+✓ Éligibilité SMS de '+225 50 00 00 00' comme éligible réussie
+✓ Éligibilité SMS de '+33612345678' comme non éligible réussie
+✓ Éligibilité SMS de 'texte' comme non éligible réussie
+✓ Éligibilité SMS de '' comme non éligible réussie
+------------------------
+
+>> Test: Formatage pour affichage
+✓ Formatage de '+2250758232792' pour affichage réussi
+✓ Formatage de '0758232792' pour affichage réussi
+✓ Formatage de '+33612345678' pour affichage réussi
+------------------------
+
+--- Test de configuration ---
+
+
+>> Test: Configuration de l'API SMS Orange
+ID client de l'API Orange: DGxb...u03a
+Secret client de l'API Orange: S4yw...hBXs
+------------------------
+
+>> Test: Configuration SMTP
+✓ Tous les paramètres SMTP sont définis
+------------------------
+
+>> Test: Configuration des destinataires de notification
+✓ ADMIN_EMAIL défini : camydia94@gmail.com
+✓ WEBMASTER_EMAIL défini : studioabidjanpro1@gmail.com
+✓ ADMIN_PHONE défini : +2250758232792
+✓ WEBMASTER_PHONE défini : +2250777104936
+Téléphone admin (+2250758232792) est valide pour les SMS
+Téléphone webmaster (+2250777104936) est valide pour les SMS
+------------------------
+
+--- Test de validation SMS (analyse de code) ---
+
+
+>> Test: Analyse du code SmsService
+Le nom d'expéditeur 'Topdigital' est présent dans le code
+La vérification des numéros ivoiriens est présente dans le code
+La validation des numéros ivoiriens avant envoi SMS est présente dans le code
+Le logging des SMS est présent dans le code
+Le logging des erreurs SMS est présent dans le code
+Le logging des SMS ignorés est présent dans le code
+La méthode isSmsEligible est correctement implémentée pour n'accepter que les numéros ivoiriens
+------------------------
+
+>> Test: Analyse du code ContactService
+Envoi de SMS à l'administrateur : présent
+Envoi de SMS au webmaster : présent
+Envoi d'email à l'administrateur : présent
+Envoi d'email au webmaster : présent
+Envoi d'email au client : présent
+------------------------
+
+==== RÉSUMÉ DES TESTS ====
+
+Total des tests : 49
+Tests réussis : 49
+Tests échoués : 0
+Taux de réussite : 100%
+
+==== FIN DES TESTS ====
+Le rapport de test complet est disponible dans : /Users/ns2poportable/Documents/camydia-agency/tests/contact-system-test-results.log

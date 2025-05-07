@@ -3,20 +3,76 @@
 @tailwind utilities;
 
 @layer utilities {
+  /* Mobile-specific opacity utilities */
+  .opacity-mobile-40 {
+    @media (max-width: 639px) {
+      opacity: 0.4;
+    }
+  }
+  
+  .opacity-mobile-50 {
+    @media (max-width: 639px) {
+      opacity: 0.5;
+    }
+  }
+  
+  .opacity-mobile-60 {
+    @media (max-width: 639px) {
+      opacity: 0.6;
+    }
+  }
+  
+  .opacity-mobile-70 {
+    @media (max-width: 639px) {
+      opacity: 0.7;
+    }
+  }
+  
+  .opacity-mobile-80 {
+    @media (max-width: 639px) {
+      opacity: 0.8;
+    }
+  }
+  
+  /* Original mobile opacity (keeping for compatibility) */
   .opacity-57-mobile {
     @media (max-width: 767px) {
       opacity: 0.57;
     }
+  }
+  
+  /* Touch-friendly improvements */
+  .tap-highlight-none {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
 /* Custom CSS */
 @layer components {
   .btn-primary {
-    @apply bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors;
+    @apply bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors tap-highlight-none;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-primary text-primary hover:bg-primary/10 px-6 py-3 rounded-lg transition-colors tap-highlight-none;
   }
 
   .section-title {
-    @apply text-3xl font-bold mb-8 text-center;
+    @apply text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center;
+  }
+}
+
+/* Custom media query helper for orientation */
+@media (orientation: portrait) {
+  .portrait-card-spacing > * {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 639px) {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
