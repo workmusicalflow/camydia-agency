@@ -82,7 +82,15 @@
         height="600">
     </div>
     <div class="container mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl sm:text-3xl font-bold text-center text-primary mb-8 sm:mb-12 relative z-20">Ce que nos clients disent</h2>
+      <div class="text-center mb-8 sm:mb-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-primary relative z-20 inline-block
+                   bg-white/95 backdrop-blur-sm px-8 py-4 rounded-full
+                   shadow-xl border-2 border-primary/10
+                   bg-gradient-to-br from-white/98 to-white/92
+                   transform transition-all duration-300 hover:scale-105">
+          Ce que nos clients disent
+        </h2>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto testimonials relative z-20">
         {# Note: Ces cartes ont aussi un hover:scale-105 Tailwind. On pourrait aussi les animer avec GSAP + ScrollTrigger #}
         <div class="bg-white p-5 sm:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
@@ -163,6 +171,28 @@
 {% endblock %}
 
 {% block scripts %}
+<style>
+  /* Effet de lueur pour le titre des témoignages */
+  .testimonials-section h2 {
+    position: relative;
+  }
+  
+  .testimonials-section h2::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 9999px;
+    background: linear-gradient(45deg, #ed1e79, #ff9b2e);
+    opacity: 0.3;
+    filter: blur(10px);
+    z-index: -1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .testimonials-section h2:hover::before {
+    opacity: 0.6;
+  }
+</style>
 <script>
 // Enregistrement du plugin SplitText (nécessaire avec GSAP 3+)
 gsap.registerPlugin(SplitText);
@@ -315,6 +345,29 @@ function setupScrollAnimations() {
       ease: "power3.out",
       scrollTrigger: {
         trigger: ".services-section h2",
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none reset",
+        once: false
+      }
+    }
+  );
+  
+  // Animation spéciale pour le titre des témoignages
+  gsap.fromTo(".testimonials-section h2", 
+    {
+      opacity: 0,
+      scale: 0.8,
+      rotation: -5
+    },
+    {
+      opacity: 1,
+      scale: 1,
+      rotation: 0,
+      duration: 1,
+      ease: "elastic.out(1, 0.5)",
+      scrollTrigger: {
+        trigger: ".testimonials-section h2",
         start: "top 80%",
         end: "bottom 20%",
         toggleActions: "play none none reset",
