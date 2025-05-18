@@ -7,6 +7,23 @@
   <meta name="theme-color" content="#ed1e79">
   <title>{% block title %}Camydia Agency{% endblock %}</title>
   
+  <!-- META OPEN GRAPH POUR PARTAGE SOCIAL -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{% block ogurl %}https://camydia-agency.site{% endblock %}">
+  <meta property="og:title" content="{% block ogtitle %}Camydia Agency{% endblock %}">
+  <meta property="og:description" content="{% block ogdescription %}Camydia Agency transforme vos événements en expériences mémorables grâce à une gamme complète de services professionnels{% endblock %}">
+  <meta property="og:image" content="https://camydia-agency.site/public/images/camydia-meta-banner.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Camydia Agency">
+  
+  <!-- Meta Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% block twtitle %}Camydia Agency{% endblock %}">
+  <meta name="twitter:description" content="{% block twdescription %}Camydia Agency transforme vos événements en expériences mémorables grâce à une gamme complète de services professionnels{% endblock %}">
+  <meta name="twitter:image" content="https://camydia-agency.site/public/images/camydia-meta-banner.jpg">
+  
   <!-- Preloading critical assets -->
   <link rel="preload" href="{{ asset('css') }}" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" as="script">
@@ -20,8 +37,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   
   <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <script src="{{ asset('js') }}?v=1.1"></script>
+  <script src="{{ asset('js/animations.js') }}?v=1.0"></script>
   
   <!-- Page-specific scripts -->
   {% block scripts %}{% endblock %}
@@ -38,7 +59,7 @@
     </div>
   {% endblock %}
 
-  <main>
+  <main class="pt-16 sm:pt-20 md:pt-24">
     {% block content %}{% endblock %}
   </main>
 

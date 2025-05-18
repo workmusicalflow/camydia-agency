@@ -4,25 +4,27 @@
 
 {% block content %}
   <!-- Hero Section -->
-  <section class="hero-content pt-24 md:pt-32 pb-16 md:pb-20 bg-gradient-to-br from-primary/10 to-accent/10 relative overflow-hidden">
+  <section class="hero-content relative overflow-hidden min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px] bg-gradient-to-br from-primary/10 to-accent/10 flex items-center">
+    <!-- Image Container avec aspect ratio -->
     <div class="absolute inset-0 z-10">
       <img 
         src="{{ image('home', 'hero') }}" 
         alt="Camydia Agency" 
-        class="w-full h-full object-cover md:object-right opacity-70 md:opacity-100"
-        width="1200"
+        class="w-full h-full object-cover md:object-center object-center"
+        width="1920"
         height="800"
         loading="eager">
     </div>
+    <!-- Black Overlay -->
+    <div class="absolute inset-0 bg-black opacity-[0.45] z-[15]"></div>
+    <!-- Content Container -->
     <div class="container mx-auto px-4 relative z-20">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 md:mb-6 [text-shadow:_0_0_3px_white] md:[text-shadow:_0_0_1px_white]">
-          Votre partenaire d'hôtesses professionnelles
+        <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 text-white [text-shadow:_0_0_3px_black] md:[text-shadow:_0_0_1px_black] opacity-0">
+          Des hôtesses pour tous vos événements
         </h1>
-        <p class="text-lg md:text-xl text-gray-900 mb-6 md:mb-8 [text-shadow:_0_0_1px_white] md:[text-shadow:none]">
-          Découvrez notre expertise et notre engagement envers l'excellence pour tous vos événements
-        </p>
-        <a href="{{ route('contact') }}" class="inline-block bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 md:px-8 md:py-4 rounded-lg transition-colors duration-300 transform hover:scale-105">
+        {# Correction: Retrait de transform hover:scale-105 car GSAP gère le hover #}
+        <a href="{{ route('contact') }}" class="hero-button inline-block bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 md:px-8 md:py-4 rounded-lg transition-colors duration-300 opacity-0">
           Contactez-nous
         </a>
       </div>
@@ -30,11 +32,12 @@
   </section>
 
   <!-- Services Section -->
-  <section class="py-12 sm:py-16 md:py-20">
+  <section class="services-section py-12 sm:py-16 md:py-20">
     <div class="container mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl sm:text-3xl font-bold text-center text-primary mb-8 sm:mb-12">Nos Services Phares</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 service-card-container">
-        <div class="bg-white p-5 sm:p-6 rounded-lg shadow-lg service-card transform transition-transform duration-300 hover:scale-105">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center text-primary mb-8 sm:mb-12 fade-in">Nos Services Phares</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 service-card-container stagger-container">
+        {# Note: Les service-card ont un hover:scale-105 Tailwind. On pourrait aussi les animer avec GSAP + ScrollTrigger #}
+        <div class="bg-white p-5 sm:p-6 rounded-lg shadow-lg service-card transform transition-transform duration-300 hover:scale-105 stagger-item">
           <div class="w-14 h-14 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3 sm:mb-4 mx-auto">
             <svg class="w-7 h-7 sm:w-8 sm:h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -68,7 +71,7 @@
   </section>
 
   <!-- Testimonials Section -->
-  <section class="py-12 sm:py-16 md:py-20 relative overflow-hidden">
+  <section class="testimonials-section py-12 sm:py-16 md:py-20 relative overflow-hidden">
     <div class="absolute inset-0 z-10">
       <img 
         src="{{ image('home', 'testimonials_bkg') }}" 
@@ -81,6 +84,7 @@
     <div class="container mx-auto px-4 sm:px-6">
       <h2 class="text-2xl sm:text-3xl font-bold text-center text-primary mb-8 sm:mb-12 relative z-20">Ce que nos clients disent</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto testimonials relative z-20">
+        {# Note: Ces cartes ont aussi un hover:scale-105 Tailwind. On pourrait aussi les animer avec GSAP + ScrollTrigger #}
         <div class="bg-white p-5 sm:p-6 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
           <div class="flex items-start sm:items-center mb-4">
             <div class="flex-shrink-0">
@@ -131,30 +135,272 @@
   </section>
 
   <!-- Partners Section -->
-  <section class="py-12 sm:py-16 md:py-20">
+  <section class="partners-section py-12 sm:py-16 md:py-20">
     <div class="container mx-auto px-4 sm:px-6">
       <h2 class="text-2xl sm:text-3xl font-bold text-center text-primary mb-8 sm:mb-12">Nos Partenaires</h2>
       
       {% if partenaires|length > 0 %}
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5 sm:gap-6 place-items-center">
-          {# Ajustement : lg:grid-cols-5, xl:grid-cols-6 et gap un peu plus petit sur la plus petite taille #}
           {% for partenaire in partenaires %}
             <div class="w-full max-w-[160px] sm:max-w-[180px] aspect-square bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl 
                         flex items-center justify-center group transition-all duration-300 ease-in-out transform hover:scale-105">
               <img src="{{ partenaire.path }}" 
-                   alt="Logo de {{ partenaire.name|capitalize }}" {# "Logo de X" est légèrement plus descriptif #}
+                   alt="Logo de {{ partenaire.name|capitalize }}"
                    class="max-w-full max-h-full object-contain p-3 sm:p-4"
                    loading="lazy"
-                   width="150"  {# Taille indicative pour le navigateur, peut aider au pré-rendu #}
+                   width="150"
                    height="150">
             </div>
           {% endfor %}
         </div>
       {% else %}
         <p class="text-center text-gray-500 dark:text-gray-400 py-8">
-          Nos partenaires seront bientôt affichés ici. {# Message un peu plus engageant #}
+          Nos partenaires seront bientôt affichés ici.
         </p>
       {% endif %}
     </div>
   </section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Enregistrement du plugin SplitText (nécessaire avec GSAP 3+)
+gsap.registerPlugin(SplitText);
+
+// Attendre que les polices soient chargées avant de déclencher l'animation
+document.fonts.ready.then(() => {
+  // Créer une timeline pour gérer les animations séquentielles
+  const heroTimeline = gsap.timeline({
+    defaults: {
+      duration: 1,
+      ease: "power3.out"
+    }
+  });
+
+  // Utilisation de SplitText.create() avec les meilleures pratiques v3.13.0+
+  SplitText.create(".hero-title", {
+    type: "words,chars",
+    charsClass: "char++", // Ajoute des classes numérotées pour chaque caractère
+    wordsClass: "word++", // Ajoute des classes numérotées pour chaque mot
+    aria: "auto", // Gestion automatique de l'accessibilité (par défaut)
+    autoSplit: true, // Re-découpage automatique si les polices se chargent ou si la largeur change
+    onSplit: (self) => {
+      // Animation des caractères du titre
+      const animation = heroTimeline.fromTo(self.chars, 
+        {
+          opacity: 0,
+          y: 60,
+          rotationX: -90,
+          scale: 0.7
+        },
+        {
+          opacity: 1,
+          y: 0,
+          rotationX: 0,
+          scale: 1,
+          duration: 0.8,
+          stagger: {
+            amount: 0.8,
+            from: "random",
+            ease: "power2.inOut"
+          },
+          ease: "back.out(1.7)"
+        }
+      );
+
+      // Animation du bouton
+      const heroButton = document.querySelector('.hero-button');
+      heroTimeline.fromTo(heroButton,
+        {
+          opacity: 0,
+          scale: 0.5,
+          rotation: -180
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          rotation: 0,
+          duration: 0.8,
+          ease: "elastic.out(1, 0.8)"
+        },
+        "-=0.6" // Chevauchement avec l'animation précédente
+      );
+      
+      // Animation continue subtile pour le bouton (floating effect)
+      heroTimeline.to(heroButton, {
+        y: -8,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+      }, ">+0.5"); // Commence après l'animation précédente
+
+      // Animation au survol du bouton
+      heroButton.addEventListener('mouseenter', () => {
+        gsap.to(heroButton, {
+          scale: 1.08,
+          duration: 0.25,
+          ease: "power2.out"
+        });
+      });
+      
+      heroButton.addEventListener('mouseleave', () => {
+        gsap.to(heroButton, {
+          scale: 1,
+          duration: 0.25,
+          ease: "power2.out"
+        });
+      });
+
+      return animation; // Retourner l'animation permet à SplitText de la gérer lors du re-split
+    }
+  });
+
+  // Révéler le titre une fois prêt
+  gsap.set(".hero-title", { opacity: 1 });
+  
+  // Animations au scroll pour les différentes sections
+  setupScrollAnimations();
+});
+
+function setupScrollAnimations() {
+  // Enregistrer ScrollTrigger (déjà fait dans animations.js mais par sécurité)
+  if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+  
+  // Animation des cartes de service avec batch pour la performance
+  ScrollTrigger.batch(".service-card", {
+    onEnter: elements => {
+      gsap.fromTo(elements, 
+        {
+          opacity: 0,
+          y: 50,
+          scale: 0.9
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power3.out"
+        }
+      );
+    },
+    onLeave: elements => {
+      gsap.set(elements, { opacity: 0, y: 50, scale: 0.9 });
+    },
+    onEnterBack: elements => {
+      gsap.fromTo(elements,
+        { opacity: 0, y: 50, scale: 0.9 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.8, stagger: 0.15 }
+      );
+    },
+    once: false, // Permet les animations r\u00e9p\u00e9t\u00e9es
+    start: "top 85%", // Ajust\u00e9 pour un meilleur timing
+    end: "bottom 15%"
+  });
+  
+  // Animation du titre de la section services
+  gsap.fromTo(".services-section h2", 
+    {
+      opacity: 0,
+      y: 30
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".services-section h2",
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none reset",
+        once: false
+      }
+    }
+  );
+  
+  // Animation des témoignages
+  gsap.utils.toArray(".testimonials-section .testimonials .bg-white").forEach((testimonial, index) => {
+    gsap.fromTo(testimonial,
+      {
+        opacity: 0,
+        x: index % 2 === 0 ? -50 : 50
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: testimonial,
+          start: "top 80%",
+          once: true
+        }
+      }
+    );
+  });
+  
+  // Animation de la section CTA
+  gsap.fromTo(".cta-section > div > *",
+    {
+      opacity: 0,
+      y: 30
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".cta-section",
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none reset"
+      }
+    }
+  );
+  
+  // Animation des partenaires
+  gsap.utils.toArray(".partners-section .grid .aspect-square").forEach((partner, index) => {
+    gsap.fromTo(partner,
+      {
+        opacity: 0,
+        scale: 0.8
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.6,
+        delay: index * 0.05,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: partner,
+          start: "top 90%",
+          once: true
+        }
+      }
+    );
+  });
+  
+  // Effet de parallaxe sur l'image de fond des témoignages
+  gsap.to(".testimonials-section img",
+    {
+      yPercent: -20,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".testimonials-section",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1.5, // Valeur numérique pour effet plus fluide
+        invalidateOnRefresh: true
+      }
+    }
+  );
+}
+</script>
 {% endblock %}
