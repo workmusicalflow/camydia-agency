@@ -7,8 +7,8 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Section Héros/Introduction -->
-        <header class="pt-20 pb-12 sm:pt-20 sm:pb-12 text-center">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary dark:text-primary-400 mb-4 sm:mb-6 pt-8">
+        <header class="pt-20 pb-12 sm:pt-20 sm:pb-12 text-center fade-in">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary dark:text-primary-400 mb-4 sm:mb-6 pt-8 text-reveal">
                 Notre Histoire & Équipe
             </h1>
             <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-md sm:max-w-2xl mx-auto">
@@ -19,7 +19,7 @@
         <!-- Section Notre Histoire -->
         <section class="py-4 sm:py-6 lg:py-10">
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-center">
-                <div class="lg:col-span-2 order-2 lg:order-1">
+                <div class="lg:col-span-2 order-2 lg:order-1 slide-right">
                     <div class="prose prose-base sm:prose-lg lg:prose-xl max-w-none dark:prose-invert text-gray-700 dark:text-gray-300">
                         <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-6">
                             Notre Histoire
@@ -30,20 +30,20 @@
                         <h3 class="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white mb-4">
                             Notre Engagement
                         </h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
+                        <ul class="space-y-3 stagger-container">
+                            <li class="flex items-start stagger-item">
                                 <svg class="flex-shrink-0 w-6 h-6 text-primary dark:text-primary-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                                 <span>Excellence dans le service client à chaque interaction</span>
                             </li>
-                            <li class="flex items-start">
+                            <li class="flex items-start stagger-item">
                                 <svg class="flex-shrink-0 w-6 h-6 text-primary dark:text-primary-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                                 <span>Professionnalisme irréprochable dans tous nos services</span>
                             </li>
-                            <li class="flex items-start">
+                            <li class="flex items-start stagger-item">
                                 <svg class="flex-shrink-0 w-6 h-6 text-primary dark:text-primary-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                                 <span>Approche personnalisée adaptée à chaque client et événement</span>
                             </li>
-                            <li class="flex items-start">
+                            <li class="flex items-start stagger-item">
                                 <svg class="flex-shrink-0 w-6 h-6 text-primary dark:text-primary-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                                 <span>Formation continue de notre équipe pour maintenir les standards les plus élevés</span>
                             </li>
@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 
-                <div class="lg:col-span-3 order-1 lg:order-2">
+                <div class="lg:col-span-3 order-1 lg:order-2 slide-left">
                     <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-6 lg:hidden">
                         Notre Agence en Images
                     </h2>
@@ -73,19 +73,19 @@
             </div>
         </section>
 
-        <!-- Section Fondatrice -->
-        <section class="py-12 sm:py-16 lg:py-20 bg-slate-50 dark:bg-slate-800 rounded-xl sm:rounded-2xl">
+        <!-- Section Fondatrice avec animations -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-slate-50 dark:bg-slate-800 rounded-xl sm:rounded-2xl fade-in">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl font-bold mb-10 sm:mb-12 text-center text-primary dark:text-primary-400">
                     Notre Fondatrice
                 </h2>
                 <div class="flex flex-col lg:flex-row gap-10 items-center">
-                    <div class="lg:w-1/3">
+                    <div class="lg:w-1/3 scale-in">
                         <div class="group overflow-hidden rounded-xl shadow-lg">
                             <img src="/images/content/about/carmen/13488.jpg" alt="Carmen, Fondatrice de Camydia Agency" class="w-full h-full object-cover object-top transition-transform duration-500 ease-in-out group-hover:scale-105">
                         </div>
                     </div>
-                    <div class="lg:w-2/3 prose prose-base sm:prose-lg lg:prose-xl max-w-none dark:prose-invert">
+                    <div class="lg:w-2/3 prose prose-base sm:prose-lg lg:prose-xl max-w-none dark:prose-invert slide-left">
                         <h3 class="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-4">Carmen</h3>
                         <p class="text-gray-700 dark:text-gray-300 italic mb-4">
                             Fondatrice et directrice de CAMYDIA AGENCY, une agence spécialisée dans la fourniture d'hôtesses et d'hôtes pour une variété d'événements. Avec ma passion pour l'excellence du service et une attention particulière aux détails, j'a bâti une agence réputée pour son professionnalisme et sa capacité à répondre aux besoins spécifiques de chaque client.
@@ -104,13 +104,13 @@
         <!-- Section Équipe et Processus de Sélection -->
         <section class="py-16 sm:py-20 lg:py-24">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl sm:text-4xl font-bold mb-10 sm:mb-12 text-center text-primary dark:text-primary-400">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-10 sm:mb-12 text-center text-primary dark:text-primary-400 fade-in">
                     Notre Équipe d'Élite
                 </h2>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 batch-container">
                     {% for image in ['24376.jpg', '61b2d.jpg', 'cb9ac.jpg'] %}
-                    <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 batch-item">
                         <div class="h-[250px] overflow-hidden">
                             <img src="/images/content/about/others/{{ image }}" alt="Membre de l'équipe Camydia" class="w-full h-full object-cover object-top">
                         </div>
@@ -130,31 +130,31 @@
                 </div>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                    <div class="prose prose-base sm:prose-lg lg:prose-xl max-w-none dark:prose-invert">
+                    <div class="prose prose-base sm:prose-lg lg:prose-xl max-w-none dark:prose-invert slide-right">
                         <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Notre Processus de Sélection</h3>
                         <p class="mb-4">
                             Notre équipe est constituée des meilleurs talents du secteur, rigoureusement sélectionnés selon des critères exigeants pour garantir l'excellence de nos services.
                         </p>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
+                        <ul class="space-y-3 stagger-container">
+                            <li class="flex items-start stagger-item">
                                 <svg class="flex-shrink-0 w-6 h-6 text-primary dark:text-primary-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                                 <span>Formation professionnelle complète</span>
                             </li>
-                            <li class="flex items-start">
+                            <li class="flex items-start stagger-item">
                                 <svg class="flex-shrink-0 w-6 h-6 text-primary dark:text-primary-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                                 <span>Expérience vérifiée dans l'événementiel et l'accueil</span>
                             </li>
-                            <li class="flex items-start">
+                            <li class="flex items-start stagger-item">
                                 <svg class="flex-shrink-0 w-6 h-6 text-primary dark:text-primary-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                                 <span>Compétences linguistiques évaluées</span>
                             </li>
-                            <li class="flex items-start">
+                            <li class="flex items-start stagger-item">
                                 <svg class="flex-shrink-0 w-6 h-6 text-primary dark:text-primary-400 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                                 <span>Test de personnalité et mise en situation pratique</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="grid grid-cols-2 gap-4 mt-6 lg:mt-0">
+                    <div class="grid grid-cols-2 gap-4 mt-6 lg:mt-0 slide-left">
                         <div class="group overflow-hidden rounded-xl shadow-lg">
                             <img src="/images/content/about/others/796a8.jpg" alt="Formation des hôtesses Camydia" class="w-full h-full object-cover object-top transition-transform duration-500 ease-in-out group-hover:scale-105">
                         </div>
@@ -166,8 +166,8 @@
             </div>
         </section>
         
-        <!-- Section CTA -->
-        <section class="py-16 sm:py-20 lg:py-24 text-center">
+        <!-- Section CTA avec animations -->
+        <section class="py-16 sm:py-20 lg:py-24 text-center fade-in">
             <h2 class="text-3xl sm:text-4xl font-bold text-primary dark:text-primary-400 mb-6 sm:mb-8">
                 Rejoignez Notre Aventure
             </h2>

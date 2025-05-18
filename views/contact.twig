@@ -11,8 +11,8 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Section Héros/Introduction -->
-        <header class="pt-20 pb-12 sm:pt-20 sm:pb-12 text-center">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary dark:text-primary-400 mb-4 sm:mb-6 pt-8">
+        <header class="pt-20 pb-12 sm:pt-20 sm:pb-12 text-center fade-in">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary dark:text-primary-400 mb-4 sm:mb-6 pt-8 text-reveal">
                 Contactez-nous
             </h1>
             <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-md sm:max-w-2xl mx-auto">
@@ -20,12 +20,12 @@
             </p>
         </header>
 
-        <!-- Section principale avec formulaire et coordonnées -->
-        <section class="py-12 sm:py-16 lg:py-20 bg-slate-50 dark:bg-slate-800 rounded-xl sm:rounded-2xl mb-16">
+        <!-- Section principale avec formulaire et coordonnées avec animations -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-slate-50 dark:bg-slate-800 rounded-xl sm:rounded-2xl mb-16 fade-in">
             <div class="max-w-6xl mx-auto px-4 sm:px-6">
                 <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
-                    <!-- Formulaire de contact -->
-                    <div class="order-2 md:order-1">
+                    <!-- Formulaire de contact avec animation -->
+                    <div class="order-2 md:order-1 slide-right">
                         <h2 class="text-2xl sm:text-3xl font-bold text-primary dark:text-primary-400 mb-6">
                             Envoyez-nous un message
                         </h2>
@@ -155,13 +155,13 @@
                     </div>
                     
                     <!-- Coordonnées et carte -->
-                    <div class="order-1 md:order-2">
+                    <div class="order-1 md:order-2 slide-left">
                         <h2 class="text-2xl sm:text-3xl font-bold text-primary dark:text-primary-400 mb-6">
                             Nos coordonnées
                         </h2>
-                        <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md p-6 mb-8">
+                        <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md p-6 mb-8 stagger-container">
                             <div class="space-y-4">
-                                <div class="flex items-start">
+                                <div class="flex items-start stagger-item">
                                     <div class="flex-shrink-0 bg-primary/10 p-3 rounded-full">
                                         <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
@@ -174,7 +174,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="flex items-start">
+                                <div class="flex items-start stagger-item">
                                     <div class="flex-shrink-0 bg-primary/10 p-3 rounded-full">
                                         <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
@@ -186,7 +186,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="flex items-start">
+                                <div class="flex items-start stagger-item">
                                     <div class="flex-shrink-0 bg-primary/10 p-3 rounded-full">
                                         <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -198,7 +198,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="flex items-start">
+                                <div class="flex items-start stagger-item">
                                     <div class="flex-shrink-0 bg-primary/10 p-3 rounded-full">
                                         <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -222,14 +222,14 @@
             </div>
         </section>
 
-        <!-- Section FAQ -->
-        <section class="py-12 sm:py-16 lg:py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <!-- Section FAQ avec animations -->
+        <section class="py-12 sm:py-16 lg:py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 fade-in">
             <h2 class="text-3xl sm:text-4xl font-bold text-primary dark:text-primary-400 mb-10 text-center">
                 Questions Fréquentes
             </h2>
             
-            <div class="space-y-6">
-                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden" x-data="{ open: false }">
+            <div class="space-y-6 batch-container">
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden batch-item" x-data="{ open: false }">
                     <button @click="open = !open" class="flex items-center justify-between w-full px-6 py-4 text-left">
                         <span class="font-semibold text-lg text-gray-800 dark:text-white">Comment puis-je réserver des hôtesses ?</span>
                         <svg :class="{'rotate-180': open}" class="w-5 h-5 text-primary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -245,7 +245,7 @@
                     </div>
                 </div>
                 
-                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden" x-data="{ open: false }">
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden batch-item" x-data="{ open: false }">
                     <button @click="open = !open" class="flex items-center justify-between w-full px-6 py-4 text-left">
                         <span class="font-semibold text-lg text-gray-800 dark:text-white">Quels sont vos tarifs ?</span>
                         <svg :class="{'rotate-180': open}" class="w-5 h-5 text-primary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -261,7 +261,7 @@
                     </div>
                 </div>
                 
-                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden" x-data="{ open: false }">
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden batch-item" x-data="{ open: false }">
                     <button @click="open = !open" class="flex items-center justify-between w-full px-6 py-4 text-left">
                         <span class="font-semibold text-lg text-gray-800 dark:text-white">Comment devenir hôtesse chez Camydia Agency ?</span>
                         <svg :class="{'rotate-180': open}" class="w-5 h-5 text-primary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -271,13 +271,13 @@
                     <div x-show="open" x-collapse>
                         <div class="px-6 py-4 bg-gray-50 dark:bg-gray-600">
                             <p class="text-gray-700 dark:text-gray-300">
-                                Pour rejoindre notre équipe d'hôtesses, vous pouvez envoyer votre CV et une photo professionnelle à notre adresse email. Nous recherchons des candidates présentant une apparence soignée, une excellente communication, une attitude positive et professionnelle, ainsi qu'une disponibilité flexible. La maîtrise de langues étrangères est un plus. Après étude de votre candidature, nous vous inviterons à un entretien si votre profil correspond à nos critères.
+                                Pour rejoindre notre équipe d'hôtesses, envoyez-nous votre CV et votre lettre de motivation via le formulaire de contact en sélectionnant "Candidature" comme sujet. Nous recherchons des personnes motivées, avec une excellente présentation et des compétences en communication. Une expérience préalable est appréciée mais non indispensable. Nous offrons une formation complète à nos nouvelles recrues.
                             </p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden" x-data="{ open: false }">
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-md overflow-hidden batch-item" x-data="{ open: false }">
                     <button @click="open = !open" class="flex items-center justify-between w-full px-6 py-4 text-left">
                         <span class="font-semibold text-lg text-gray-800 dark:text-white">Quels types d'événements couvrez-vous ?</span>
                         <svg :class="{'rotate-180': open}" class="w-5 h-5 text-primary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -295,9 +295,9 @@
             </div>
         </section>
 
-        <!-- Section CTA -->
-        <section class="py-12 sm:py-16 lg:py-20 text-center max-w-4xl mx-auto">
-            <div class="bg-gradient-to-r from-primary to-accent rounded-2xl shadow-lg p-8 sm:p-10 lg:p-12 relative overflow-hidden">
+        <!-- Section CTA avec animations -->
+        <section class="py-12 sm:py-16 lg:py-20 text-center max-w-4xl mx-auto fade-in">
+            <div class="bg-gradient-to-r from-primary to-accent rounded-2xl shadow-lg p-8 sm:p-10 lg:p-12 relative overflow-hidden scale-in">
                 <div class="absolute inset-0 bg-pattern opacity-10"></div>
                 <div class="relative z-10">
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
@@ -333,97 +333,24 @@ function contactForm() {
         errors: {},
         isSubmitting: false,
         
-        validateEmail(email) {
-            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return re.test(String(email).toLowerCase());
-        },
-        
-        validatePhone(phone) {
-            // Le téléphone est optionnel
-            if (!phone || phone.trim() === '') return true;
-            
-            // Enlever les espaces pour faciliter la validation
-            const cleanPhone = phone.replace(/\s+/g, '');
-            
-            // Différents formats de numéros ivoiriens acceptés
-            const ivorianPatterns = {
-                international: /^\+225[0-9]{9}$/, // +225XXXXXXXXX
-                internationalWith00: /^00225[0-9]{9}$/, // 00225XXXXXXXXX
-                local: /^0[0-9]{9}$/, // 0XXXXXXXXX (numéro local à 10 chiffres commençant par 0)
-                localShort: /^[0-9]{9}$/ // XXXXXXXXX (numéro à 9 chiffres sans le 0 initial)
-            };
-            
-            // Formats internationaux génériques
-            const internationalGeneric = /^\+[1-9][0-9]{1,14}$/; // Format E.164 (numéro international commençant par +)
-            const internationalGenericWith00 = /^00[1-9][0-9]{1,14}$/; // Variante avec 00 au lieu de +
-            
-            // Vérifier si c'est un numéro ivoirien
-            const isIvorianNumber = 
-                ivorianPatterns.international.test(cleanPhone) || 
-                ivorianPatterns.internationalWith00.test(cleanPhone) ||
-                ivorianPatterns.local.test(cleanPhone) ||
-                ivorianPatterns.localShort.test(cleanPhone);
-                
-            // Vérifier si c'est un numéro international générique
-            const isInternationalNumber = 
-                internationalGeneric.test(cleanPhone) || 
-                internationalGenericWith00.test(cleanPhone);
-            
-            // Accepter les numéros ivoiriens et internationaux valides
-            return isIvorianNumber || isInternationalNumber;
-        },
-        
-        validate() {
+        submitForm() {
             this.errors = {};
+            this.isSubmitting = true;
             
-            // Validation du nom
-            if (!this.formData.name || this.formData.name.length < 3) {
-                this.errors.name = 'Le nom doit contenir au moins 3 caractères.';
-            }
+            // Validation simple
+            if (!this.formData.name) this.errors.name = 'Le nom est requis';
+            if (!this.formData.email) this.errors.email = 'L\'email est requis';
+            if (!this.formData.subject) this.errors.subject = 'Le sujet est requis';
+            if (!this.formData.message) this.errors.message = 'Le message est requis';
+            if (!this.formData.privacy) this.errors.privacy = 'Vous devez accepter la politique de confidentialité';
             
-            // Validation de l'email
-            if (!this.formData.email) {
-                this.errors.email = 'L\'email est requis.';
-            } else if (!this.validateEmail(this.formData.email)) {
-                this.errors.email = 'Veuillez entrer une adresse email valide.';
-            }
-            
-            // Validation du téléphone (optionnel)
-            if (this.formData.phone && !this.validatePhone(this.formData.phone)) {
-                this.errors.phone = 'Veuillez entrer un numéro de téléphone au format international (+XXX XX XX XX XX).';
-            }
-            
-            // Validation du sujet
-            if (!this.formData.subject) {
-                this.errors.subject = 'Veuillez sélectionner un sujet.';
-            }
-            
-            // Validation du message
-            if (!this.formData.message || this.formData.message.length < 10) {
-                this.errors.message = 'Le message doit contenir au moins 10 caractères.';
-            }
-            
-            // Validation de la politique de confidentialité
-            if (!this.formData.privacy) {
-                this.errors.privacy = 'Vous devez accepter la politique de confidentialité.';
-            }
-            
-            return Object.keys(this.errors).length === 0;
-        },
-        
-        submitForm(e) {
-            // Validation côté client
-            if (!this.validate()) {
-                // Empêcher l'envoi du formulaire s'il y a des erreurs
-                e.preventDefault();
+            if (Object.keys(this.errors).length > 0) {
+                this.isSubmitting = false;
                 return;
             }
             
-            // Si tout est valide, on active l'indicateur de chargement
-            this.isSubmitting = true;
-            
             // Soumettre le formulaire
-            e.target.submit();
+            document.querySelector('form').submit();
         }
     }
 }

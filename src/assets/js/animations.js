@@ -7,7 +7,7 @@
 if (typeof gsap !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, SplitText);
 } else {
-  console.error('GSAP n'est pas chargé');
+  console.error("GSAP n'est pas chargé");
 }
 
 // Configuration globale des animations
@@ -40,6 +40,7 @@ const ScrollAnimations = {
    * Initialise toutes les animations au scroll
    */
   init() {
+    console.log("ScrollAnimations: Initialisation des animations...");
     // Initialiser les animations par type
     this.initFadeAnimations();
     this.initScaleAnimations();
@@ -245,6 +246,11 @@ const ScrollAnimations = {
       const items = container.querySelectorAll('.batch-item');
       
       if (items.length > 0) {
+        // Initialiser l'état des éléments
+        gsap.set(items, {
+          opacity: 0,
+          y: 30
+        });
         ScrollTrigger.batch(items, {
           ...AnimationConfig.defaultTriggerOptions,
           onEnter: batch => {
@@ -309,9 +315,11 @@ if (typeof window !== 'undefined') {
 // Auto-initialisation si DOM prêt
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOMContentLoaded: Initialisation des animations");
     ScrollAnimations.init();
   });
 } else {
+  console.log("DOM déjà chargé: Initialisation des animations");
   ScrollAnimations.init();
 }
 
